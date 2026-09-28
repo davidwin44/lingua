@@ -146,3 +146,7 @@ tests/            fsrs, grading, scheduler, interleave, coverage, content, stora
 - Vocabulary ranks are approximate, compiled from general knowledge of Italian frequency lists. The "everyday text covered" figure is a Zipf-model estimate, not a corpus measurement.
 - FSRS predicts recall better than SM-2 on large benchmarks, but no randomized trial has compared learner outcomes between the two. Weight optimisation is out of scope. The review log is kept so it could be added later.
 - "Fast" is relative. The US Foreign Service Institute estimates 552–690 intensive class hours for professional Italian. This app aims to waste fewer of your hours, not to skip them.
+
+## Licence
+
+Copyright (c) 2026 davidwin44. All rights reserved. The code and content are publicly visible but not open source. You may not use, copy, modify or distribute any part of it without written permission. See [LICENSE](LICENSE). Third-party fonts and npm packages keep their own licences.

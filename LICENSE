@@ -1,0 +1,21 @@
+Copyright (c) 2026 davidwin44. All rights reserved.
+
+This repository and everything in it (source code, lesson and language content, text,
+icons, documentation and other material) is proprietary.
+
+No licence is granted, expressly or by implication, to use, copy, modify, merge,
+publish, distribute, sublicense or sell any part of it, or to create derivative works
+from it, without the prior written permission of the copyright holder.
+
+Making this repository publicly visible does not grant any of these rights. The only
+permissions other people have are those GitHub's Terms of Service give GitHub users,
+which let them view this repository and fork it on GitHub.
+
+Third-party material keeps its own licence and is not covered by this notice:
+- src/assets/fonts/literata-*.woff2: the Literata typeface, under the SIL Open Font
+  License 1.1 (see src/assets/fonts/LITERATA-OFL.txt).
+- Packages installed through npm (listed in package.json) are licensed by their
+  respective authors.
+
+To ask for permission, contact the copyright holder through GitHub:
+https://github.com/davidwin44

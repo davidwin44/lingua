@@ -1,0 +1,61 @@
+{
+  "id": "g-imperfetto",
+  "order": 5,
+  "title": "Imperfetto vs passato prossimo",
+  "level": "A2",
+  "explanation": "Italian has two main past tenses, and they do different jobs.\n\nThe **imperfetto** describes the *background*: habits, repeated actions, descriptions, weather, age, time, and actions in progress. Signal words: *sempre, ogni giorno, da bambino, mentre, di solito*.\n\nThe **passato prossimo** describes *completed events*: things that happened once, at a specific time, or that moved the story forward. Signal words: *ieri, sabato scorso, una volta, all'improvviso, alle otto*.\n\nA useful picture: the imperfetto is the **stage set**, the passato prossimo is **what happened** on it. *Mentre leggevo, è squillato il telefono* = While I was reading (background), the phone rang (event).\n\n**Forming the imperfetto:** remove *-re* from the infinitive and add *-vo, -vi, -va, -vamo, -vate, -vano*: *parlare → parlavo*, *avere → avevo*, *dormire → dormivo*. **Essere** is irregular: *ero, eri, era, eravamo, eravate, erano*. **Fare** uses *face-*: *facevo*.",
+  "table": {
+    "headers": ["Imperfetto (background)", "Passato prossimo (event)"],
+    "rows": [
+      ["Da bambino giocavo al parco.", "Ieri ho giocato a calcio."],
+      ["Faceva freddo e pioveva.", "All'improvviso è arrivato Marco."],
+      ["Mentre mangiavo...", "...è squillato il telefono."]
+    ]
+  },
+  "examples": [
+    {"l2": "Da piccola andavo al mare ogni estate.", "en": "As a little girl I went to the seaside every summer."},
+    {"l2": "Ieri sono andata al mare.", "en": "Yesterday I went to the seaside."},
+    {"l2": "Era tardi e faceva freddo.", "en": "It was late and it was cold."},
+    {"l2": "Mentre dormivo, hai chiamato tu?", "en": "While I was sleeping, did you call?"}
+  ],
+  "drills": [
+    {"id": "d-imp-01", "type": "cloze", "prompt": "Da bambino ___ sempre al parco. (giocare, io)", "en": "As a child I always played in the park.", "answer": ["giocavo"], "category": "imperfetto",
+     "hints": ["'Sempre' + childhood: is this a single event or a habit?", "Habits in the past use the imperfetto: gioca- + -vo."],
+     "explanation": "A repeated childhood habit uses the imperfetto: giocavo."},
+    {"id": "d-imp-02", "type": "cloze", "prompt": "Ieri ___ un libro. (comprare, io)", "en": "Yesterday I bought a book.", "answer": ["ho comprato"], "category": "passato-prossimo",
+     "hints": ["'Ieri' points to one completed action. Which tense tells a single event?", "Passato prossimo with avere: ho + compr-ato."],
+     "explanation": "A single completed event at a specific time uses the passato prossimo: ho comprato."},
+    {"id": "d-imp-03", "type": "cloze", "prompt": "Quando ero piccolo, ___ un cane. (avere, io)", "en": "When I was little, I had a dog.", "answer": ["avevo"], "category": "imperfetto",
+     "hints": ["Is owning a dog throughout your childhood an event or an ongoing situation?", "Ongoing past states use the imperfetto: ave- + -vo."],
+     "explanation": "A situation that lasted in the past uses the imperfetto: avevo."},
+    {"id": "d-imp-04", "type": "cloze", "prompt": "Mentre ___, è arrivato Marco. (mangiare, io)", "en": "While I was eating, Marco arrived.", "answer": ["mangiavo"], "category": "imperfetto",
+     "hints": ["'Mentre' introduces an action in progress when something else happened. Which tense sets the scene?", "Action in progress → imperfetto: mangia- + -vo."],
+     "explanation": "An action in progress (interrupted by an event) uses the imperfetto: mangiavo."},
+    {"id": "d-imp-05", "type": "cloze", "prompt": "Stamattina ___ un caffè al bar. (bere, io)", "en": "This morning I drank a coffee at the café.", "answer": ["ho bevuto"], "category": "passato-prossimo",
+     "hints": ["This morning, once: event or habit? The participle of bere is irregular.", "Passato prossimo: ho + bev-uto."],
+     "explanation": "A single event this morning uses the passato prossimo: ho bevuto."},
+    {"id": "d-imp-06", "type": "cloze", "prompt": "___ le otto quando sono uscita. (essere)", "en": "It was eight o'clock when I went out.", "answer": ["erano"], "category": "imperfetto",
+     "hints": ["Telling the time in the past is background information. Which tense? 'Le otto' is plural.", "Essere, imperfetto, loro form: er…"],
+     "explanation": "Time in the past is description, so it uses the imperfetto; le otto is plural: erano le otto."},
+    {"id": "d-imp-07", "type": "cloze", "prompt": "Sabato scorso ___ al mare. (andare, noi)", "en": "Last Saturday we went to the seaside.", "answer": ["siamo andati", "siamo andate"], "category": "passato-prossimo",
+     "hints": ["'Sabato scorso' marks one specific occasion. Which tense? And which auxiliary for andare?", "Passato prossimo with essere: siamo andat…"],
+     "explanation": "One specific trip is an event: siamo andati (or andate for an all-female group)."},
+    {"id": "d-imp-08", "type": "cloze", "prompt": "Il cielo ___ grigio e faceva freddo. (essere)", "en": "The sky was grey and it was cold.", "answer": ["era"], "category": "imperfetto",
+     "hints": ["This describes the scene, like the weather. Event or background?", "Descriptions → imperfetto of essere, lui form."],
+     "explanation": "Description of the scene uses the imperfetto: il cielo era grigio."},
+    {"id": "d-imp-09", "type": "cloze", "prompt": "All'improvviso ___ il telefono. (squillare)", "en": "Suddenly the phone rang.", "answer": ["è squillato", "ha squillato"], "category": "passato-prossimo",
+     "hints": ["'All'improvviso' = suddenly. Is that background or a single event?", "A sudden event → passato prossimo: è squillato."],
+     "explanation": "A sudden, single event uses the passato prossimo: è squillato (ha squillato is also used)."},
+    {"id": "d-imp-10", "type": "cloze", "prompt": "Ogni estate i miei nonni ___ in montagna. (andare)", "en": "Every summer my grandparents went to the mountains.", "answer": ["andavano"], "category": "imperfetto",
+     "hints": ["'Ogni estate' signals repetition. Which tense for past habits?", "Imperfetto, loro form: anda- + -vano."],
+     "explanation": "A repeated action uses the imperfetto: andavano."},
+    {"id": "d-imp-11", "type": "choose", "prompt": "Mentre dormivo, ___ la sveglia.", "en": "While I was sleeping, the alarm went off.", "answer": ["è suonata"], "category": "passato-prossimo", "options": ["suonava", "è suonata"],
+     "hints": ["The sleeping is the background. Is the alarm going off background too, or the event that interrupts it?", "The interrupting event takes the passato prossimo."],
+     "explanation": "The alarm is the single event that interrupts the background: è suonata.",
+     "justify": {"question": "Why the passato prossimo?", "options": ["It's a single event that interrupts an action in progress", "Because the sentence starts with mentre", "Because sveglia is feminine"], "answerIndex": 0}},
+    {"id": "d-imp-12", "type": "choose", "prompt": "Da piccola ___ ogni sera prima di dormire.", "en": "As a little girl I read every evening before sleeping.", "answer": ["leggevo"], "category": "imperfetto", "options": ["leggevo", "ho letto"],
+     "hints": ["'Ogni sera' + childhood: one event or a habit?", "Past habits use the imperfetto."],
+     "explanation": "A childhood habit uses the imperfetto: leggevo.",
+     "justify": {"question": "Why the imperfetto?", "options": ["It describes a repeated habit in the past", "Because it happened only once", "Because leggere is irregular"], "answerIndex": 0}}
+  ]
+}

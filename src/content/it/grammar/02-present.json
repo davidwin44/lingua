@@ -1,0 +1,63 @@
+{
+  "id": "g-present",
+  "order": 2,
+  "title": "Present tense of regular verbs (-are, -ere, -ire)",
+  "level": "A1",
+  "explanation": "Italian verbs fall into three groups by their infinitive ending: **-are** (*parlare*), **-ere** (*prendere*) and **-ire** (*dormire*). To conjugate, remove the ending and add the endings in the table.\n\nThe **io** form always ends in *-o*, the **tu** form always ends in *-i*, and the **noi** form always ends in *-iamo*.\n\nMany -ire verbs, such as **capire**, **finire** and **preferire**, add **-isc-** in every form except *noi* and *voi*: *capisco, capisci, capisce, capiamo, capite, capiscono*.\n\nSpelling watch: verbs in *-giare* and *-ciare* don't double the *i*: *mangiare → tu mangi, noi mangiamo*.\n\nSubject pronouns are usually dropped, because the ending already shows who is doing the action: *Parlo italiano* = I speak Italian.",
+  "table": {
+    "headers": ["", "parlare", "prendere", "dormire", "capire (-isc-)"],
+    "rows": [
+      ["io", "parlo", "prendo", "dormo", "capisco"],
+      ["tu", "parli", "prendi", "dormi", "capisci"],
+      ["lui/lei", "parla", "prende", "dorme", "capisce"],
+      ["noi", "parliamo", "prendiamo", "dormiamo", "capiamo"],
+      ["voi", "parlate", "prendete", "dormite", "capite"],
+      ["loro", "parlano", "prendono", "dormono", "capiscono"]
+    ]
+  },
+  "examples": [
+    {"l2": "Parlo un po' di italiano.", "en": "I speak a little Italian."},
+    {"l2": "Prendete un caffè?", "en": "Are you (all) having a coffee?"},
+    {"l2": "I bambini dormono.", "en": "The children are sleeping."},
+    {"l2": "Capisco, ma non parlo bene.", "en": "I understand, but I don't speak well."}
+  ],
+  "drills": [
+    {"id": "d-pre-01", "type": "cloze", "prompt": "Io ___ italiano. (parlare)", "en": "I speak Italian.", "answer": ["parlo"], "category": "-are",
+     "hints": ["Remove -are from the infinitive. What ending does the io form always take?", "The io form ends in -o."],
+     "explanation": "parl- + -o = parlo."},
+    {"id": "d-pre-02", "type": "cloze", "prompt": "Tu ___ la pizza. (mangiare)", "en": "You eat the pizza.", "answer": ["mangi"], "category": "-are",
+     "hints": ["The tu form ends in -i. The stem is mangi-: do you need a second i?", "Verbs in -giare don't double the i."],
+     "explanation": "mangi- + -i would give 'mangii', but the i is not doubled: tu mangi."},
+    {"id": "d-pre-03", "type": "cloze", "prompt": "Lei ___ un caffè. (prendere)", "en": "She has a coffee.", "answer": ["prende"], "category": "-ere",
+     "hints": ["Prendere is an -ere verb. What ending does lui/lei take in the -ere group?", "In -ere and -ire verbs, the lui/lei form ends in -e."],
+     "explanation": "prend- + -e = prende."},
+    {"id": "d-pre-04", "type": "cloze", "prompt": "Noi ___ il mare. (vedere)", "en": "We see the sea.", "answer": ["vediamo"], "category": "-ere",
+     "hints": ["The noi ending is the same in all three groups. What is it?", "noi → -iamo."],
+     "explanation": "ved- + -iamo = vediamo."},
+    {"id": "d-pre-05", "type": "cloze", "prompt": "Voi ___ la musica? (sentire)", "en": "Do you (all) hear the music?", "answer": ["sentite"], "category": "-ire",
+     "hints": ["The voi ending keeps the vowel of the infinitive. Which vowel is that for sentire?", "-are → -ate, -ere → -ete, -ire → -ite."],
+     "explanation": "sent- + -ite = sentite."},
+    {"id": "d-pre-06", "type": "cloze", "prompt": "Loro ___ tutto. (capire)", "en": "They understand everything.", "answer": ["capiscono"], "category": "-isc-",
+     "hints": ["Capire is an -isc- verb. Does the loro form get -isc-?", "Only noi and voi lose -isc-: cap- + isc + -ono."],
+     "explanation": "Capire adds -isc- in the loro form: capiscono."},
+    {"id": "d-pre-07", "type": "cloze", "prompt": "Io ___ l'italiano. (capire)", "en": "I understand Italian.", "answer": ["capisco"], "category": "-isc-",
+     "hints": ["Capire belongs to the special -ire group. What gets inserted before the ending?", "cap- + isc + -o."],
+     "explanation": "Capire takes -isc- in the io form: capisco (the sc sounds like 'sk' before o)."},
+    {"id": "d-pre-08", "type": "cloze", "prompt": "Noi ___ bene. (capire)", "en": "We understand well.", "answer": ["capiamo"], "category": "-isc-",
+     "hints": ["Does -isc- appear in the noi form?", "noi and voi have no -isc-: cap- + -iamo."],
+     "explanation": "The noi form has no -isc-: capiamo."},
+    {"id": "d-pre-09", "type": "cloze", "prompt": "Loro ___ molto. (parlare)", "en": "They talk a lot.", "answer": ["parlano"], "category": "-are",
+     "hints": ["Loro ending for -are verbs: think of the lui form and add something.", "-are verbs: loro → -ano."],
+     "explanation": "parl- + -ano = parlano. The stress stays on the first syllable: PAR-la-no."},
+    {"id": "d-pre-10", "type": "cloze", "prompt": "Tu ___ poco. (dormire)", "en": "You sleep little.", "answer": ["dormi"], "category": "-ire",
+     "hints": ["Dormire does not take -isc-. What is the tu ending for every verb group?", "tu → -i."],
+     "explanation": "dorm- + -i = dormi."},
+    {"id": "d-pre-11", "type": "transform", "prompt": "Change the subject: Io prendo il treno. → Noi ___ il treno.", "en": "I take the train. → We take the train.", "answer": ["prendiamo"], "category": "-ere",
+     "hints": ["Keep the stem prend- and use the noi ending.", "noi → -iamo."],
+     "explanation": "prend- + -iamo = prendiamo."},
+    {"id": "d-pre-12", "type": "choose", "prompt": "Lui ___ il lavoro alle sei. (finire)", "en": "He finishes work at six.", "answer": ["finisce"], "category": "-isc-", "options": ["fine", "finisce"],
+     "hints": ["Finire belongs to the same group as capire. What does that group add?", "finire: finisco, finisci, finisce..."],
+     "explanation": "Finire is an -isc- verb: lui finisce.",
+     "justify": {"question": "Why finisce?", "options": ["Finire is an -isc- verb, like capire", "The lui form always adds -sc-", "Because the sentence is in the past"], "answerIndex": 0}}
+  ]
+}

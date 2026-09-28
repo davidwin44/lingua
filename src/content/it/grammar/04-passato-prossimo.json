@@ -1,0 +1,61 @@
+{
+  "id": "g-passato-prossimo",
+  "order": 4,
+  "title": "Passato prossimo: essere or avere?",
+  "level": "A1+",
+  "explanation": "The **passato prossimo** describes completed actions: *Ieri ho mangiato una pizza* (Yesterday I ate a pizza). It has two parts: the present of **avere** or **essere** + the **past participle**.\n\nRegular participles: *-are → -ato* (parlato), *-ere → -uto* (venduto), *-ire → -ito* (dormito). Common irregular ones: *fatto, detto, visto, preso, letto, scritto, stato, venuto*.\n\n**Which auxiliary?**\n- **avere**: most verbs, especially those that can take a direct object (*mangiare, vedere, comprare, fare*).\n- **essere**: verbs of **motion** from A to B (*andare, venire, arrivare, partire, uscire, tornare*), **change of state** (*nascere, morire, diventare*), and *essere, stare, restare*.\n\n**Agreement:** with **essere**, the participle agrees with the subject like an adjective: *Marco è andato*, *Maria è andata*, *i ragazzi sono andati*, *le ragazze sono andate*. With avere, it normally stays *-o*: *Maria ha mangiato*.",
+  "table": {
+    "headers": ["Subject", "andare (essere)", "mangiare (avere)"],
+    "rows": [
+      ["Marco", "è andato", "ha mangiato"],
+      ["Maria", "è andata", "ha mangiato"],
+      ["i ragazzi", "sono andati", "hanno mangiato"],
+      ["le ragazze", "sono andate", "hanno mangiato"]
+    ]
+  },
+  "examples": [
+    {"l2": "Ieri sera abbiamo visto un film.", "en": "Last night we watched a film."},
+    {"l2": "Giulia è partita alle otto.", "en": "Giulia left at eight."},
+    {"l2": "I miei amici sono venuti a cena.", "en": "My friends came to dinner."},
+    {"l2": "Hai già fatto colazione?", "en": "Have you had breakfast yet?"}
+  ],
+  "drills": [
+    {"id": "d-pp-01", "type": "cloze", "prompt": "Ieri Marco ___ a Roma. (andare)", "en": "Yesterday Marco went to Rome.", "answer": ["è andato"], "category": "essere-aux",
+     "hints": ["Is 'andare' a verb of motion? Which auxiliary do motion verbs take?", "Motion verbs take essere, and the participle agrees with Marco: è andat…"],
+     "explanation": "Andare is a motion verb, so it takes essere. Marco is masculine singular: è andato."},
+    {"id": "d-pp-02", "type": "cloze", "prompt": "Maria ___ al cinema. (andare)", "en": "Maria went to the cinema.", "answer": ["è andata"], "category": "essere-aux",
+     "hints": ["Andare takes essere. With essere, what must the participle do?", "The participle agrees with the subject: Maria → -a."],
+     "explanation": "With essere, the participle agrees with the subject: Maria è andata."},
+    {"id": "d-pp-03", "type": "cloze", "prompt": "Noi ___ la pizza. (mangiare)", "en": "We ate the pizza.", "answer": ["abbiamo mangiato"], "category": "avere-aux",
+     "hints": ["Mangiare has a direct object (la pizza). Which auxiliary do such verbs take?", "Avere, noi form + participle in -ato."],
+     "explanation": "Verbs with a direct object take avere: abbiamo mangiato."},
+    {"id": "d-pp-04", "type": "cloze", "prompt": "Loro ___ tardi. (arrivare)", "en": "They arrived late.", "answer": ["sono arrivati"], "category": "essere-aux",
+     "hints": ["Arrivare means moving to a place. Which auxiliary?", "Essere, loro form, and a plural participle ending in -i."],
+     "explanation": "Arrivare is a motion verb: sono arrivati (masculine or mixed plural)."},
+    {"id": "d-pp-05", "type": "cloze", "prompt": "Io ___ un libro. (leggere)", "en": "I read a book.", "answer": ["ho letto"], "category": "avere-aux",
+     "hints": ["Leggere takes a direct object. Which auxiliary? And the participle is irregular.", "ho + the irregular participle of leggere (it rhymes with 'detto')."],
+     "explanation": "Leggere takes avere and has an irregular participle: ho letto."},
+    {"id": "d-pp-06", "type": "cloze", "prompt": "Le ragazze ___ alle otto. (uscire)", "en": "The girls went out at eight.", "answer": ["sono uscite"], "category": "essere-aux",
+     "hints": ["Uscire means going out: motion. Which auxiliary? Then check agreement with 'le ragazze'.", "Feminine plural participle ends in -e: sono uscit…"],
+     "explanation": "Uscire takes essere; le ragazze is feminine plural, so: sono uscite."},
+    {"id": "d-pp-07", "type": "cloze", "prompt": "Tu ___ con Paolo? (parlare)", "en": "Did you talk to Paolo?", "answer": ["hai parlato"], "category": "avere-aux",
+     "hints": ["Is talking a movement from one place to another? Which auxiliary do most verbs take?", "Avere, tu form: h… + parlato."],
+     "explanation": "Parlare is not a motion or change-of-state verb, so it takes avere: hai parlato."},
+    {"id": "d-pp-08", "type": "cloze", "prompt": "Il treno ___ in ritardo. (partire)", "en": "The train left late.", "answer": ["è partito"], "category": "essere-aux",
+     "hints": ["Leaving (partire) is a movement away from a place. Which auxiliary?", "Essere + participle agreeing with 'il treno' (masculine singular)."],
+     "explanation": "Partire is a motion verb: il treno è partito."},
+    {"id": "d-pp-09", "type": "cloze", "prompt": "Ieri sera io ___ la cena. (fare)", "en": "Last night I made dinner.", "answer": ["ho fatto"], "category": "avere-aux",
+     "hints": ["Fare has a direct object here (la cena) and no movement. Which auxiliary?", "ho + the irregular participle of fare (f…tto)."],
+     "explanation": "Fare takes avere and has an irregular participle: ho fatto."},
+    {"id": "d-pp-10", "type": "cloze", "prompt": "Voi ___ il film? (vedere)", "en": "Did you (all) see the film?", "answer": ["avete visto", "avete veduto"], "category": "avere-aux",
+     "hints": ["Vedere has a direct object (il film). Which auxiliary? The participle is irregular.", "avete + the irregular participle of vedere (v…to)."],
+     "explanation": "Vedere takes avere; its usual participle is visto: avete visto."},
+    {"id": "d-pp-11", "type": "choose", "prompt": "___ venuti in treno. (We came by train.)", "en": "We came by train.", "answer": ["Siamo"], "category": "essere-aux", "options": ["Siamo", "Abbiamo"],
+     "hints": ["Is venire a verb of motion? Notice the participle ends in -i: what does agreement tell you?", "Participle agreement with the subject only happens with essere."],
+     "explanation": "Venire is a motion verb, so it takes essere: siamo venuti.",
+     "justify": {"question": "Why siamo?", "options": ["Venire is a verb of motion, so it takes essere", "Noi always takes essere", "Because the train is the subject"], "answerIndex": 0}},
+    {"id": "d-pp-12", "type": "transform", "prompt": "Put into the passato prossimo: Lucia va al mercato.", "en": "Lucia goes to the market → Lucia went to the market.", "answer": ["Lucia è andata al mercato"], "category": "essere-aux",
+     "hints": ["Andare is a motion verb. Which auxiliary, and does the participle need to agree with Lucia?", "Lucia è andat… al mercato."],
+     "explanation": "Va → è andata: motion verb with essere, participle agreeing with Lucia (feminine)."}
+  ]
+}

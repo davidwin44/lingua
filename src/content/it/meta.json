@@ -1,0 +1,12 @@
+{
+  "code": "it",
+  "name": "Italian",
+  "ttsLang": "it-IT",
+  "srLang": "it-IT",
+  "baseLang": "en",
+  "accentKeys": ["à", "è", "é", "ì", "ò", "ù", "'"],
+  "persons": ["io", "tu", "lui", "noi", "voi", "loro"],
+  "personLabels": ["io", "tu", "lui/lei/Lei", "noi", "voi", "loro"],
+  "zipfListSize": 6500,
+  "note": "Vocabulary ranks are approximate, compiled from general knowledge of Italian frequency lists (spoken and written corpora differ). Verb ranks give each verb's approximate position in the combined word list. The text-coverage estimate uses a Zipf model calibrated so the top 1,000 lemmas cover about 80% of running text."
+}

@@ -1,0 +1,63 @@
+{
+  "id": "g-essere-avere",
+  "order": 3,
+  "title": "Essere vs avere, and key irregular verbs",
+  "level": "A1",
+  "explanation": "**Essere** (to be) and **avere** (to have) are the two most important verbs in Italian, and both are irregular.\n\nUse **essere** for identity, origin, description and location: *Sono Marco. Sono di Roma. Il caffè è buono.*\n\nUse **avere** for possession **and** for many physical states that English expresses with *to be*:\n- *Ho fame / sete* = I'm hungry / thirsty\n- *Ho caldo / freddo* = I'm hot / cold\n- *Ho vent'anni* = I'm twenty (years old)\n- *Ho sonno / paura* = I'm sleepy / afraid\n\nWatch the accent: **è** = is, **e** = and. And the *h* in *ho, hai, ha, hanno* is silent; it only separates them from *o* (or), *ai* (to the), *a* (to) and *anno* (year).\n\nOther everyday irregular verbs: **fare** (faccio, fai, fa, facciamo, fate, fanno), **andare** (vado, vai, va, andiamo, andate, vanno), **stare** (sto, stai, sta...), **volere** (voglio, vuoi, vuole...).",
+  "table": {
+    "headers": ["", "essere", "avere"],
+    "rows": [
+      ["io", "sono", "ho"],
+      ["tu", "sei", "hai"],
+      ["lui/lei/Lei", "è", "ha"],
+      ["noi", "siamo", "abbiamo"],
+      ["voi", "siete", "avete"],
+      ["loro", "sono", "hanno"]
+    ]
+  },
+  "examples": [
+    {"l2": "Sono di Napoli, ma abito a Milano.", "en": "I'm from Naples, but I live in Milan."},
+    {"l2": "Hai fame? Io ho sete.", "en": "Are you hungry? I'm thirsty."},
+    {"l2": "Mia sorella ha vent'anni.", "en": "My sister is twenty."},
+    {"l2": "Il bar è chiuso e fa freddo.", "en": "The café is closed and it's cold."}
+  ],
+  "drills": [
+    {"id": "d-ea-01", "type": "cloze", "prompt": "Io ___ stanco.", "en": "I am tired.", "answer": ["sono"], "category": "essere",
+     "hints": ["'Tired' describes a state of the person, not a physical sensation like hunger. Which verb?", "Essere, io form: s…"],
+     "explanation": "Descriptions (stanco, felice, italiano) use essere: io sono."},
+    {"id": "d-ea-02", "type": "cloze", "prompt": "Lei ___ vent'anni.", "en": "She is twenty.", "answer": ["ha"], "category": "avere",
+     "hints": ["In Italian, age is something you *have*. Which verb means 'to have'?", "Avere, lei form: two letters, silent h."],
+     "explanation": "Age uses avere: Lei ha vent'anni (literally 'she has twenty years')."},
+    {"id": "d-ea-03", "type": "cloze", "prompt": "Noi ___ fame.", "en": "We are hungry.", "answer": ["abbiamo"], "category": "avere",
+     "hints": ["Hunger is a physical sensation. Which verb do Italians use for hunger and thirst?", "Avere, noi form: ab…"],
+     "explanation": "Fame, sete, caldo, freddo and sonno use avere: noi abbiamo fame."},
+    {"id": "d-ea-04", "type": "cloze", "prompt": "Tu ___ di Roma?", "en": "Are you from Rome?", "answer": ["sei"], "category": "essere",
+     "hints": ["Origin (where someone is from) uses which verb?", "Essere, tu form: three letters."],
+     "explanation": "Origin uses essere + di: tu sei di Roma?"},
+    {"id": "d-ea-05", "type": "cloze", "prompt": "Loro ___ due figli.", "en": "They have two children.", "answer": ["hanno"], "category": "avere",
+     "hints": ["This is possession. Which verb?", "Avere, loro form: starts with a silent h."],
+     "explanation": "Possession uses avere: loro hanno."},
+    {"id": "d-ea-06", "type": "cloze", "prompt": "Tu ___ caldo?", "en": "Are you hot?", "answer": ["hai"], "category": "avere",
+     "hints": ["Feeling hot is a physical sensation. Which verb, essere or avere?", "Avere, tu form: h + two letters."],
+     "explanation": "Feeling hot or cold uses avere: hai caldo? ('Sei caldo' would describe you as warm to the touch.)"},
+    {"id": "d-ea-07", "type": "cloze", "prompt": "Il caffè ___ buono.", "en": "The coffee is good.", "answer": ["è"], "category": "essere",
+     "hints": ["This describes the coffee. Which verb? And check the accent.", "Essere, lui form: one letter with a grave accent."],
+     "explanation": "Descriptions use essere: il caffè è buono. Without the accent, e means 'and'."},
+    {"id": "d-ea-08", "type": "cloze", "prompt": "Io ___ i compiti. (fare)", "en": "I do my homework.", "answer": ["faccio"], "category": "irregular",
+     "hints": ["Fare is irregular. Its io form has a double consonant.", "io faccio, tu fai, lui fa..."],
+     "explanation": "Fare: io faccio."},
+    {"id": "d-ea-09", "type": "cloze", "prompt": "Noi ___ al mare. (andare)", "en": "We go to the seaside.", "answer": ["andiamo"], "category": "irregular",
+     "hints": ["Andare is irregular in io/tu/lui/loro (vado, vai, va, vanno). Is the noi form regular?", "noi → stem and- + -iamo."],
+     "explanation": "Andare is regular in noi and voi: andiamo, andate."},
+    {"id": "d-ea-10", "type": "cloze", "prompt": "Come ___? (stare, tu)", "en": "How are you?", "answer": ["stai"], "category": "irregular",
+     "hints": ["Stare is used for 'how are you?'. What is its tu form?", "stare: sto, st…, sta."],
+     "explanation": "Stare: io sto, tu stai. Come stai? = How are you?"},
+    {"id": "d-ea-11", "type": "cloze", "prompt": "Loro ___ un gelato. (volere)", "en": "They want an ice cream.", "answer": ["vogliono"], "category": "irregular",
+     "hints": ["Volere is irregular. The io form is voglio; the loro form is built on the same stem.", "vogli- + -ono."],
+     "explanation": "Volere: voglio, vuoi, vuole, vogliamo, volete, vogliono."},
+    {"id": "d-ea-12", "type": "choose", "prompt": "___ freddo. (I'm cold.)", "en": "I'm cold.", "answer": ["Ho"], "category": "avere", "options": ["Sono", "Ho"],
+     "hints": ["Is feeling cold a description of who you are, or a physical sensation?", "Sensations like fame, sete, caldo, freddo use avere."],
+     "explanation": "Ho freddo = I'm cold. Physical sensations use avere.",
+     "justify": {"question": "Why avere?", "options": ["Physical sensations (hunger, thirst, heat, cold) use avere", "Avere is used with all adjectives", "Freddo is a verb"], "answerIndex": 0}}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "g-prepositions",
+  "order": 6,
+  "title": "Articulated prepositions (del, al, dal, nel, sul...)",
+  "level": "A1+",
+  "explanation": "When the prepositions **di, a, da, in, su** come before a definite article, they merge with it into one word.\n\nThe pattern is regular once you know the article:\n- **di** becomes **de-**: *di + il = del*\n- **in** becomes **ne-**: *in + il = nel*\n- **a, da, su** keep their form: *al, dal, sul*\n- Articles starting with *l* (lo, la, l', le) double the *l*: *della, nello, all'amico, sulle*\n\nSo first choose the right article for the noun (lesson 1), then combine: *lo zaino → nello zaino*, *l'albergo → all'albergo*, *gli amici → agli amici*.\n\n**Con** and **per** usually stay separate: *con il treno, per la stazione*.\n\nCommon uses: *di* = of/from (*il libro del ragazzo*), *a* = to/at (*vado al bar*), *da* = from/at someone's place (*torno dal lavoro, vado dal medico*), *in* = in (*nella borsa*), *su* = on (*sul tavolo*).",
+  "table": {
+    "headers": ["", "il", "lo", "l'", "la", "i", "gli", "le"],
+    "rows": [
+      ["di", "del", "dello", "dell'", "della", "dei", "degli", "delle"],
+      ["a", "al", "allo", "all'", "alla", "ai", "agli", "alle"],
+      ["da", "dal", "dallo", "dall'", "dalla", "dai", "dagli", "dalle"],
+      ["in", "nel", "nello", "nell'", "nella", "nei", "negli", "nelle"],
+      ["su", "sul", "sullo", "sull'", "sulla", "sui", "sugli", "sulle"]
+    ]
+  },
+  "examples": [
+    {"l2": "Vado al bar con gli amici.", "en": "I'm going to the café with my friends."},
+    {"l2": "Il telefono è nella borsa.", "en": "The phone is in the bag."},
+    {"l2": "Torno dalla stazione a piedi.", "en": "I'm walking back from the station."},
+    {"l2": "Le chiavi sono sul tavolo della cucina.", "en": "The keys are on the kitchen table."}
+  ],
+  "drills": [
+    {"id": "d-prep-01", "type": "cloze", "prompt": "Il libro ___ ragazzo. (di + il)", "en": "The boy's book.", "answer": ["del"], "category": "di+",
+     "hints": ["What does di become when it merges with an article?", "di → de-, and + il gives de + l."],
+     "explanation": "di + il = del."},
+    {"id": "d-prep-02", "type": "cloze", "prompt": "Vado ___ mare. (a + il)", "en": "I'm going to the seaside.", "answer": ["al"], "category": "a+",
+     "hints": ["A keeps its form and joins the article. Does il double its l?", "Only articles starting with l double it; il just adds -l: a + l."],
+     "explanation": "a + il = al."},
+    {"id": "d-prep-03", "type": "cloze", "prompt": "Torno ___ stazione. (da + la)", "en": "I'm coming back from the station.", "answer": ["dalla"], "category": "da+",
+     "hints": ["Articles starting with l double the l when merged. What happens to da + la?", "da + ll + a."],
+     "explanation": "da + la = dalla (the l doubles)."},
+    {"id": "d-prep-04", "type": "cloze", "prompt": "Le chiavi sono ___ borsa. (in + la)", "en": "The keys are in the bag.", "answer": ["nella"], "category": "in+",
+     "hints": ["What does in become when it merges with an article?", "in → ne-, and la doubles the l: ne + lla."],
+     "explanation": "in + la = nella."},
+    {"id": "d-prep-05", "type": "cloze", "prompt": "Il gatto è ___ tavolo. (su + il)", "en": "The cat is on the table.", "answer": ["sul"], "category": "su+",
+     "hints": ["Su keeps its form. How does it combine with il?", "su + l."],
+     "explanation": "su + il = sul."},
+    {"id": "d-prep-06", "type": "cloze", "prompt": "Scrivo ___ amici. (a + gli)", "en": "I'm writing to my friends.", "answer": ["agli"], "category": "a+",
+     "hints": ["Gli starts with g, not l. Does anything double?", "a + gli, written as one word."],
+     "explanation": "a + gli = agli."},
+    {"id": "d-prep-07", "type": "cloze", "prompt": "La casa ___ nonni. (di + i)", "en": "The grandparents' house.", "answer": ["dei"], "category": "di+",
+     "hints": ["di → de-. What do you add for the plural article i?", "de + i."],
+     "explanation": "di + i = dei."},
+    {"id": "d-prep-08", "type": "cloze", "prompt": "Vengo ___ zio. (da + lo)", "en": "I'm coming from my uncle's.", "answer": ["dallo"], "category": "da+",
+     "hints": ["Lo starts with l, so it doubles. What is da + lo?", "da + ll + o."],
+     "explanation": "da + lo = dallo."},
+    {"id": "d-prep-09", "type": "cloze", "prompt": "Il pesce è ___ acqua. (in + l')", "en": "The fish is in the water.", "answer": ["nell'"], "category": "in+",
+     "hints": ["in → ne-, and l' doubles its l. Keep the apostrophe.", "ne + ll + '."],
+     "explanation": "in + l' = nell' (nell'acqua)."},
+    {"id": "d-prep-10", "type": "cloze", "prompt": "Il bicchiere è ___ tavola. (su + la)", "en": "The glass is on the table.", "answer": ["sulla"], "category": "su+",
+     "hints": ["Su + an article starting with l: what happens to the l?", "su + ll + a."],
+     "explanation": "su + la = sulla."},
+    {"id": "d-prep-11", "type": "cloze", "prompt": "Vado ___ stazione. (a + ?)", "en": "I'm going to the station.", "answer": ["alla"], "category": "a+",
+     "hints": ["First find the article: is stazione masculine or feminine? Then combine with a.", "Stazione is feminine: la. a + la = a + ll + a."],
+     "explanation": "La stazione → a + la = alla."},
+    {"id": "d-prep-12", "type": "choose", "prompt": "I biglietti sono ___ zaino.", "en": "The tickets are in the backpack.", "answer": ["nello"], "category": "in+", "options": ["nel", "nello"],
+     "hints": ["Which article does zaino take on its own: il or lo?", "Zaino starts with z, so it takes lo: in + lo."],
+     "explanation": "Lo zaino → in + lo = nello.",
+     "justify": {"question": "Why nello?", "options": ["Zaino takes lo (it starts with z), and in + lo = nello", "Because zaino is plural", "Nello is used with all nouns ending in -o"], "answerIndex": 0}}
+  ]
+}

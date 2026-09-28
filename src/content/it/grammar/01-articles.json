@@ -1,0 +1,62 @@
+{
+  "id": "g-articles",
+  "order": 1,
+  "title": "Nouns, gender and the definite article",
+  "level": "A1",
+  "explanation": "Every Italian noun is **masculine** or **feminine**. Most nouns ending in *-o* are masculine (*il libro*), and most ending in *-a* are feminine (*la casa*). Nouns ending in *-e* can be either, so learn them with their article (*il pane*, *la notte*).\n\nPlurals usually change the last vowel: *-o → -i*, *-a → -e*, *-e → -i*. Nouns ending in an accented vowel or a consonant don't change (*la città → le città*, *il bar → i bar*).\n\nThe word for **the** depends on gender, number and the **first sound** of the next word:\n- **il / i**: masculine, before most consonants (*il treno, i treni*)\n- **lo / gli**: masculine, before *s + consonant*, *z*, *gn*, *ps*, *y* (*lo studente, gli studenti*)\n- **l' / gli**: masculine, before a vowel (*l'amico, gli amici*)\n- **la / le**: feminine, before a consonant (*la casa, le case*)\n- **l' / le**: feminine, before a vowel (*l'acqua, le amiche*)\n\nNote that *l'* is only singular: in the plural, feminine nouns take *le* even before a vowel.",
+  "table": {
+    "headers": ["", "Singular", "Plural"],
+    "rows": [
+      ["Masc. + consonant", "il", "i"],
+      ["Masc. + s+cons., z, gn, ps, y", "lo", "gli"],
+      ["Masc. + vowel", "l'", "gli"],
+      ["Fem. + consonant", "la", "le"],
+      ["Fem. + vowel", "l'", "le"]
+    ]
+  },
+  "examples": [
+    {"l2": "Il treno e lo zaino sono qui.", "en": "The train and the backpack are here."},
+    {"l2": "L'amico di Paola si chiama Luca.", "en": "Paola's friend is called Luca."},
+    {"l2": "Gli studenti leggono i libri.", "en": "The students read the books."},
+    {"l2": "Le amiche di Anna abitano a Roma.", "en": "Anna's friends live in Rome."}
+  ],
+  "drills": [
+    {"id": "d-art-01", "type": "cloze", "prompt": "___ libro", "en": "the book", "answer": ["il"], "category": "il",
+     "hints": ["Is 'libro' masculine or feminine? What kind of sound does it start with?", "Masculine singular before an ordinary consonant: the article starts with 'i'."],
+     "explanation": "Libro is masculine and starts with a plain consonant, so it takes il."},
+    {"id": "d-art-02", "type": "cloze", "prompt": "___ studente", "en": "the student", "answer": ["lo"], "category": "lo",
+     "hints": ["'Studente' is masculine. Look at its first two letters: what is special about s + consonant?", "Masculine nouns starting with s + consonant, z, gn, ps or y take lo."],
+     "explanation": "Studente starts with s + consonant (st-), so the masculine article is lo."},
+    {"id": "d-art-03", "type": "cloze", "prompt": "___ amico", "en": "the friend", "answer": ["l'"], "category": "l'",
+     "hints": ["'Amico' starts with a vowel. What happens to the article before a vowel?", "Before a vowel, lo and la shorten to l' (with an apostrophe)."],
+     "explanation": "Amico is masculine and starts with a vowel, so lo becomes l': l'amico."},
+    {"id": "d-art-04", "type": "cloze", "prompt": "___ casa", "en": "the house", "answer": ["la"], "category": "la",
+     "hints": ["What does the ending -a usually tell you about gender?", "Feminine singular before a consonant: the article starts with 'l' and ends in 'a'."],
+     "explanation": "Casa is feminine and starts with a consonant, so it takes la."},
+    {"id": "d-art-05", "type": "cloze", "prompt": "___ ragazzi", "en": "the boys", "answer": ["i"], "category": "i",
+     "hints": ["'Ragazzi' is masculine plural. Which singular article would 'ragazzo' take, and what is its plural?", "The plural of il is a single letter."],
+     "explanation": "Ragazzo takes il, and the plural of il is i: i ragazzi."},
+    {"id": "d-art-06", "type": "cloze", "prompt": "___ zaini", "en": "the backpacks", "answer": ["gli"], "category": "gli",
+     "hints": ["'Zaino' starts with z. Which singular article does a masculine z- word take, and what is its plural?", "The plural of lo is gli."],
+     "explanation": "Zaino takes lo (z-), and the plural of lo is gli: gli zaini."},
+    {"id": "d-art-07", "type": "cloze", "prompt": "___ amiche", "en": "the (female) friends", "answer": ["le"], "category": "le",
+     "hints": ["'Amiche' is feminine plural. Does l' exist in the plural?", "All feminine plurals take le, even before a vowel."],
+     "explanation": "L' is singular only. Feminine plural nouns always take le: le amiche."},
+    {"id": "d-art-08", "type": "cloze", "prompt": "___ amici", "en": "the friends", "answer": ["gli"], "category": "gli",
+     "hints": ["'Amici' is masculine plural and starts with a vowel. What is the plural of l' for masculine nouns?", "Masculine plural before a vowel: the same article as before z- or s + consonant."],
+     "explanation": "Masculine nouns starting with a vowel take l' in the singular and gli in the plural: gli amici."},
+    {"id": "d-art-09", "type": "cloze", "prompt": "___ acqua", "en": "the water", "answer": ["l'"], "category": "l'",
+     "hints": ["'Acqua' is feminine, but look at its first letter.", "La becomes l' before a vowel."],
+     "explanation": "Acqua is feminine and starts with a vowel, so la shortens to l': l'acqua."},
+    {"id": "d-art-10", "type": "cloze", "prompt": "___ città", "en": "the city", "answer": ["la"], "category": "la",
+     "hints": ["Nouns ending in an accented -à are usually feminine. Which article?", "Feminine singular before a consonant."],
+     "explanation": "Città is feminine (like most -tà nouns) and starts with a consonant: la città."},
+    {"id": "d-art-11", "type": "transform", "prompt": "Make it plural: lo studente", "en": "the student → the students", "answer": ["gli studenti"], "category": "gli",
+     "hints": ["Change both the article and the noun. What is the plural of lo?", "lo → gli, and nouns ending in -e change to -i."],
+     "explanation": "Lo becomes gli and studente (-e) becomes studenti (-i): gli studenti."},
+    {"id": "d-art-12", "type": "choose", "prompt": "___ zucchero", "en": "the sugar", "answer": ["lo"], "category": "lo", "options": ["il", "lo"],
+     "hints": ["Look at the first letter of 'zucchero'. Is it an ordinary consonant?", "Masculine nouns starting with z take lo."],
+     "explanation": "Zucchero is masculine and starts with z, so it takes lo.",
+     "justify": {"question": "Why lo?", "options": ["Because zucchero starts with z", "Because zucchero is feminine", "Because zucchero is plural"], "answerIndex": 0}}
+  ]
+}

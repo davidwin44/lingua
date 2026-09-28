@@ -1,0 +1,42 @@
+[
+  {
+    "id": "mix-auxiliary",
+    "title": "Auxiliary: essere or avere?",
+    "description": "Passato prossimo sentences where you must decide between essere (motion, change of state) and avere (most other verbs).",
+    "categories": ["essere-aux", "avere-aux"],
+    "itemIds": ["d-pp-01", "d-pp-02", "d-pp-03", "d-pp-04", "d-pp-05", "d-pp-06", "d-pp-07", "d-pp-08", "d-pp-09", "d-pp-10", "d-pp-11"],
+    "introducedIn": ["g-passato-prossimo"]
+  },
+  {
+    "id": "mix-past-tenses",
+    "title": "Passato prossimo or imperfetto?",
+    "description": "Past-tense sentences where you must tell background (imperfetto) from completed events (passato prossimo).",
+    "categories": ["imperfetto", "passato-prossimo"],
+    "itemIds": ["d-imp-01", "d-imp-02", "d-imp-03", "d-imp-04", "d-imp-05", "d-imp-06", "d-imp-07", "d-imp-08", "d-imp-09", "d-imp-10", "d-imp-11", "d-imp-12"],
+    "introducedIn": ["g-passato-prossimo", "g-imperfetto"]
+  },
+  {
+    "id": "mix-articles",
+    "title": "Definite article forms",
+    "description": "Nouns that need il, lo, l', la, i, gli or le: decide from gender, number and first sound.",
+    "categories": ["il", "lo", "l'", "la", "i", "gli", "le"],
+    "itemIds": ["d-art-01", "d-art-02", "d-art-03", "d-art-04", "d-art-05", "d-art-06", "d-art-07", "d-art-08", "d-art-09", "d-art-10", "d-art-12"],
+    "introducedIn": ["g-articles"]
+  },
+  {
+    "id": "mix-essere-avere",
+    "title": "Essere or avere?",
+    "description": "Present-tense sentences where you choose between 'to be' and 'to have' (including hunger, age, heat and cold).",
+    "categories": ["essere", "avere"],
+    "itemIds": ["d-ea-01", "d-ea-02", "d-ea-03", "d-ea-04", "d-ea-05", "d-ea-06", "d-ea-07", "d-ea-12"],
+    "introducedIn": ["g-essere-avere"]
+  },
+  {
+    "id": "mix-tu-lei",
+    "title": "Tu or Lei?",
+    "description": "Situations where you choose informal (tu) or formal (Lei) address and the matching verb form.",
+    "categories": ["tu", "Lei"],
+    "itemIds": ["d-tl-01", "d-tl-02", "d-tl-03", "d-tl-04", "d-tl-05", "d-tl-06", "d-tl-07", "d-tl-08", "d-tl-09", "d-tl-10", "d-tl-12"],
+    "introducedIn": ["g-tu-lei"]
+  }
+]

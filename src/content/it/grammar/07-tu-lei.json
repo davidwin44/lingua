@@ -1,0 +1,63 @@
+{
+  "id": "g-tu-lei",
+  "order": 7,
+  "title": "Tu vs Lei: informal and formal address",
+  "level": "A1+",
+  "explanation": "Italian has two ways to say **you** to one person.\n\n**Tu** is informal: use it with friends, family, children, classmates and people your age in relaxed settings. The verb uses the **tu** form: *Come stai? Di dove sei?*\n\n**Lei** is formal: use it with strangers, shop and hotel staff, officials, older people and anyone you would call *signore* or *signora*. The verb uses the **third person** (the lui/lei form), and it is often written with a capital L: *Come sta? Di dov'è? Lei parla inglese?*\n\nRelated pairs to keep consistent:\n- *Scusa* (tu) / *Scusi* (Lei) = excuse me\n- *Ciao* (tu) / *Buongiorno, ArrivederLa* (Lei)\n- *ti* (tu) / *La, Le* (Lei): *Come ti chiami? / Come si chiama?*\n\nWhen in doubt, start with **Lei**; Italians will invite you to switch: *Diamoci del tu!* (Let's use tu!). Mixing the two in one conversation sounds odd, so pick one and stick to it.",
+  "table": {
+    "headers": ["", "tu (informal)", "Lei (formal)"],
+    "rows": [
+      ["How are you?", "Come stai?", "Come sta?"],
+      ["Where are you from?", "Di dove sei?", "Di dov'è?"],
+      ["What's your name?", "Come ti chiami?", "Come si chiama?"],
+      ["Excuse me", "Scusa", "Scusi"]
+    ]
+  },
+  "examples": [
+    {"l2": "Ciao Luca, come stai?", "en": "Hi Luca, how are you?"},
+    {"l2": "Buongiorno, signora. Come sta?", "en": "Good morning, madam. How are you?"},
+    {"l2": "Scusi, Lei è di qui?", "en": "Excuse me, are you from here?"},
+    {"l2": "Scusa, mi passi il sale?", "en": "Sorry, could you pass me the salt?"}
+  ],
+  "drills": [
+    {"id": "d-tl-01", "type": "cloze", "prompt": "(to a friend) Come ___? (stare)", "en": "How are you?", "answer": ["stai"], "category": "tu",
+     "hints": ["A friend: tu or Lei? Then which verb form?", "Tu form of stare: st…"],
+     "explanation": "With a friend use tu: come stai?"},
+    {"id": "d-tl-02", "type": "cloze", "prompt": "(to a shop assistant) Buongiorno, come ___? (stare)", "en": "Good morning, how are you?", "answer": ["sta"], "category": "Lei",
+     "hints": ["A shop assistant you don't know: tu or Lei? Which person of the verb does Lei use?", "Lei uses the third-person (lui/lei) form: st…"],
+     "explanation": "Formal Lei takes the third person: come sta?"},
+    {"id": "d-tl-03", "type": "cloze", "prompt": "(to a stranger) Scusi, ___ inglese? (parlare)", "en": "Excuse me, do you speak English?", "answer": ["parla"], "category": "Lei",
+     "hints": ["'Scusi' already shows the register. Which verb form goes with Lei?", "Third person of parlare: parl…"],
+     "explanation": "Scusi signals Lei, so the verb is third person: parla."},
+    {"id": "d-tl-04", "type": "cloze", "prompt": "(to your brother) ___ un caffè? (volere)", "en": "Do you want a coffee?", "answer": ["vuoi"], "category": "tu",
+     "hints": ["Family members get tu. What is the tu form of volere?", "voglio, v…, vuole."],
+     "explanation": "With family use tu: vuoi un caffè?"},
+    {"id": "d-tl-05", "type": "cloze", "prompt": "(to a hotel receptionist) ___ una camera libera? (avere)", "en": "Do you have a free room?", "answer": ["ha"], "category": "Lei",
+     "hints": ["A receptionist: formal or informal? Which verb form?", "Lei → third person of avere: two letters, silent h."],
+     "explanation": "At a hotel desk use Lei: ha una camera libera?"},
+    {"id": "d-tl-06", "type": "cloze", "prompt": "(to a new classmate your age) Di dove ___? (essere)", "en": "Where are you from?", "answer": ["sei"], "category": "tu",
+     "hints": ["Classmates your age normally use tu. What is the tu form of essere?", "essere: sono, s…, è."],
+     "explanation": "Between classmates tu is normal: di dove sei?"},
+    {"id": "d-tl-07", "type": "cloze", "prompt": "(to an older neighbour) Di dove ___? (essere)", "en": "Where are you from?", "answer": ["è"], "category": "Lei",
+     "hints": ["An older neighbour you don't know well: tu or Lei?", "Lei → third person of essere, with an accent."],
+     "explanation": "With an older neighbour use Lei: di dov'è? / di dove è?"},
+    {"id": "d-tl-08", "type": "choose", "prompt": "(to a friend) ___, dov'è il bagno?", "en": "Excuse me, where is the bathroom?", "answer": ["Scusa"], "category": "tu", "options": ["Scusa", "Scusi"],
+     "hints": ["Which register do you use with a friend?", "Scusa is the tu form; scusi is the Lei form."],
+     "explanation": "With a friend: scusa.",
+     "justify": {"question": "Why scusa?", "options": ["It's the tu form, right for a friend", "Scusa is used only in the evening", "Scusi is only for men"], "answerIndex": 0}},
+    {"id": "d-tl-09", "type": "choose", "prompt": "(to a stranger in the street) ___, dov'è la stazione?", "en": "Excuse me, where is the station?", "answer": ["Scusi"], "category": "Lei", "options": ["Scusa", "Scusi"],
+     "hints": ["A stranger in the street: which register?", "The formal form ends in -i."],
+     "explanation": "With a stranger: scusi (formal).",
+     "justify": {"question": "Why scusi?", "options": ["It's the Lei form, polite with strangers", "Because the station is feminine", "Scusi means 'thanks'"], "answerIndex": 0}},
+    {"id": "d-tl-10", "type": "cloze", "prompt": "(to a waiter) Mi ___ il conto, per favore? (portare)", "en": "Could you bring me the bill, please?", "answer": ["porta"], "category": "Lei",
+     "hints": ["A waiter: tu or Lei? Which verb form?", "Third person of portare: port…"],
+     "explanation": "With a waiter use Lei: mi porta il conto?"},
+    {"id": "d-tl-11", "type": "transform", "prompt": "Make it formal: Tu sei stanco?", "en": "Are you tired?", "answer": ["Lei è stanco?", "Lei è stanca?", "è stanco?", "è stanca?"], "category": "Lei",
+     "hints": ["Replace tu with the formal pronoun. Which verb person goes with it?", "Lei + third person of essere: Lei è…"],
+     "explanation": "Formal: Lei è stanco? (or stanca, for a woman)."},
+    {"id": "d-tl-12", "type": "choose", "prompt": "(to a child) ___", "en": "What's your name?", "answer": ["Come ti chiami?"], "category": "tu", "options": ["Come ti chiami?", "Come si chiama?"],
+     "hints": ["Adults always use tu with children. Which pronoun goes with tu: ti or si?", "tu → ti."],
+     "explanation": "With a child use tu: come ti chiami?",
+     "justify": {"question": "Why 'ti chiami'?", "options": ["Children are addressed with tu, and tu uses ti", "Si is only for plural", "Chiamarsi is irregular"], "answerIndex": 0}}
+  ]
+}

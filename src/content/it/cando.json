@@ -1,0 +1,10 @@
+[
+  {"id": "cd-introduce", "text": "I can introduce myself and say where I'm from", "requires": {"lessons": ["g-essere-avere"], "passages": ["p-mi-presento"], "production": ["pr-26"]}, "practise": ["sc-free"]},
+  {"id": "cd-order", "text": "I can order food and drinks", "requires": {"passages": ["p-al-bar"], "production": ["pr-23", "pr-06"]}, "practise": ["sc-bar", "sc-restaurant"]},
+  {"id": "cd-yesterday", "text": "I can talk about what I did yesterday or last weekend", "requires": {"lessons": ["g-passato-prossimo"], "passages": ["p-fine-settimana"]}, "practise": ["sc-weekend"]},
+  {"id": "cd-childhood", "text": "I can describe what life used to be like", "requires": {"lessons": ["g-imperfetto"], "passages": ["p-quando-ero-bambina"]}, "practise": ["sc-childhood"]},
+  {"id": "cd-polite", "text": "I can speak politely to strangers using Lei", "requires": {"lessons": ["g-tu-lei"], "production": ["pr-19", "pr-21"]}, "practise": ["sc-directions", "sc-hotel"]},
+  {"id": "cd-train", "text": "I can buy a train ticket and understand departure times", "requires": {"passages": ["p-treno-firenze"], "production": ["pr-24"]}, "practise": ["sc-directions"]},
+  {"id": "cd-places", "text": "I can say where things are and where I'm going", "requires": {"lessons": ["g-articles", "g-prepositions"], "production": ["pr-09", "pr-10"]}},
+  {"id": "cd-day", "text": "I can describe a day out in the present tense", "requires": {"lessons": ["g-present"], "passages": ["p-giornata-roma"]}}
+]

@@ -6,3 +6,5 @@ coverage
 
 # Local tool config
 .claude/
+desktop/target
+release

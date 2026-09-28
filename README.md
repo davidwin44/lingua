@@ -17,7 +17,19 @@ npm run dev
 
 Then open the URL Vite prints (usually http://localhost:5173).
 
-### Install it as a desktop app
+### Windows installer
+
+Download `Lingua-Setup-<version>.exe` from [Releases](https://github.com/davidwin44/lingua/releases) and run it.
+
+- It installs for your Windows account only, so no admin rights are needed. The app goes in `%LOCALAPPDATA%\Programs\Lingua`, with Start menu and desktop shortcuts.
+- Lingua opens in its own Microsoft Edge app window. Edge comes with Windows 10 and 11, and it's used because it supports speech recognition for pronunciation practice. The app is served from inside `Lingua.exe` on `127.0.0.1:47823`, so it works offline. It uses a dedicated Edge profile in `%LOCALAPPDATA%\Lingua`, so progress persists and stays separate from normal browsing.
+- To uninstall, go to Windows **Settings → Apps → Installed apps → Lingua**. You'll be asked whether to keep your progress.
+- The file isn't code-signed yet, so Windows SmartScreen may say it "protected your PC". Choose **More info → Run anyway**.
+- Scripted installs are supported: `Lingua-Setup-<version>.exe --silent`. To remove everything silently, run `Lingua.exe --uninstall --silent --purge`.
+
+To build the installer yourself you need Rust (MSVC toolchain) and the Windows SDK. Run `npm run installer` and the output appears in `release/`.
+
+### Install it from the browser instead
 
 Lingua installs from Edge or Chrome into its own window, with a Start menu and taskbar icon. Once installed it works offline.
 
@@ -32,6 +44,7 @@ The installed app keeps every feature, including pronunciation checking, because
 | Script | What it does |
 |---|---|
 | `npm run app` | Build, then serve the production app on port 4173 (for installing) |
+| `npm run installer` | Build the Windows installer into `release/` (needs Rust) |
 | `npm run dev` | Start the dev server |
 | `npm run build` | Typecheck (`tsc --noEmit`), then build to `dist/` |
 | `npm run preview` | Serve the production build |
@@ -138,6 +151,7 @@ src/
   styles/         fonts.css (bundled Literata + IBM Plex Sans), base.css (tokens, light/dark, shell), components.css
 pwa/              sw-template.js (service worker; vite.config.ts fills in the file list at build time)
 public/           manifest.webmanifest, icons/
+desktop/          Rust launcher/installer (embeds dist/, serves it locally, opens an Edge app window)
 tests/            fsrs, grading, scheduler, interleave, coverage, content, storage, tutor/speech, components
 ```
 

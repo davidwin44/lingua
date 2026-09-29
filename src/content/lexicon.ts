@@ -73,7 +73,7 @@ export function buildLexicon(pack: LanguagePack): LexItem[] {
       translations: [v.translation],
       acceptEn: [v.translation, ...(v.alsoAccept ?? [])],
       acceptL2: [v.infinitive],
-      note: `${v.auxiliary === 'essere' ? 'essere' : 'avere'} + ${v.pastParticiple} in the passato prossimo.`,
+      note: `${v.auxiliary} + ${v.pastParticiple} in the ${pack.meta.pastTense}.`,
       example: v.example,
       verb: v,
       tags: ['verb'],

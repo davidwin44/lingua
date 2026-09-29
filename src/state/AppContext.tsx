@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { getPack } from '../content';
 import { buildLexicon, drillIndex, type DrillRef, type LexItem } from '../content/lexicon';
 import type { LanguagePack } from '../content/types';
-import { browserStorage, loadProgress, saveProgress, type KVStorage } from '../lib/storage';
+import { browserStorage, hasProgress, loadProgress, saveProgress, type KVStorage } from '../lib/storage';
 import type { Progress } from '../lib/types';
 
 export interface AppContextValue {
@@ -15,6 +15,8 @@ export interface AppContextValue {
   update: (fn: (p: Progress, now: number) => Progress) => void;
   /** Replace all progress (import / reset). */
   replace: (p: Progress) => void;
+  /** Open another language. Its progress is kept separately and loaded from storage. */
+  switchLanguage: (code: string) => void;
   saveFailed: boolean;
 }
 
@@ -41,6 +43,15 @@ export function AppProvider({
     setProgress((prev) => fn(prev, Date.now()));
   }, []);
   const replace = useCallback((p: Progress) => setProgress(p), []);
+  const switchLanguage = useCallback((code: string) => {
+    setProgress((prev) => {
+      if (prev.lang === code) return prev;
+      const next = loadProgress(store.current, Date.now(), code);
+      // A language opened for the first time keeps your settings (daily limits, tutor key),
+      // but not the voice, which belongs to the old language.
+      return hasProgress(code, store.current) ? next : { ...next, settings: { ...prev.settings, voiceURI: null } };
+    });
+  }, []);
 
   const pack = getPack(progress.lang);
   const value = useMemo<AppContextValue>(() => {
@@ -53,9 +64,10 @@ export function AppProvider({
       progress,
       update,
       replace,
+      switchLanguage,
       saveFailed,
     };
-  }, [pack, progress, update, replace, saveFailed]);
+  }, [pack, progress, update, replace, switchLanguage, saveFailed]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

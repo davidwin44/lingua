@@ -2,11 +2,21 @@
  * localStorage persistence behind a versioned key, with try/catch around every access.
  * Corrupted or unreadable data falls back to a fresh state; nothing here ever throws
  * except importProgress, which reports a friendly error for bad files.
+ *
+ * Each language keeps its own progress. Italian keeps the original key, so progress saved
+ * before other languages existed is read as it is, with no migration. `lingua:active`
+ * records which language is open.
  */
 import { DEFAULT_SETTINGS, createFreshProgress } from './progress';
 import type { Progress } from './types';
 
 export const STORAGE_KEY = 'lingua:v1';
+export const ACTIVE_KEY = 'lingua:active';
+const FIRST_LANG = 'it';
+
+export function progressKey(lang: string): string {
+  return lang === FIRST_LANG ? STORAGE_KEY : `${STORAGE_KEY}:${lang}`;
+}
 const EXPORT_APP = 'lingua';
 
 export interface KVStorage {
@@ -85,29 +95,51 @@ export function sanitizeProgress(raw: unknown, now: number): Progress | null {
   };
 }
 
-export function loadProgress(storage: KVStorage | null = browserStorage(), now = Date.now()): Progress {
+/** The language whose progress was saved last, which is the one to open. */
+export function activeLanguage(storage: KVStorage | null = browserStorage()): string {
   try {
-    const text = storage?.getItem(STORAGE_KEY);
-    if (!text) return createFreshProgress(now);
-    return sanitizeProgress(JSON.parse(text), now) ?? createFreshProgress(now);
+    return storage?.getItem(ACTIVE_KEY) || FIRST_LANG;
   } catch {
-    return createFreshProgress(now);
+    return FIRST_LANG;
   }
 }
 
+/** Whether this browser holds any progress for a language. */
+export function hasProgress(lang: string, storage: KVStorage | null = browserStorage()): boolean {
+  try {
+    return Boolean(storage?.getItem(progressKey(lang)));
+  } catch {
+    return false;
+  }
+}
+
+export function loadProgress(storage: KVStorage | null = browserStorage(), now = Date.now(), lang = activeLanguage(storage)): Progress {
+  try {
+    const text = storage?.getItem(progressKey(lang));
+    if (!text) return createFreshProgress(now, lang);
+    const p = sanitizeProgress(JSON.parse(text), now);
+    if (!p) return createFreshProgress(now, lang);
+    return p.lang === lang ? p : { ...p, lang };
+  } catch {
+    return createFreshProgress(now, lang);
+  }
+}
+
+/** Save under the progress's own language, and make that language the active one. */
 export function saveProgress(p: Progress, storage: KVStorage | null = browserStorage()): boolean {
   try {
     if (!storage) return false;
-    storage.setItem(STORAGE_KEY, JSON.stringify(p));
+    storage.setItem(progressKey(p.lang), JSON.stringify(p));
+    storage.setItem(ACTIVE_KEY, p.lang);
     return true;
   } catch {
     return false;
   }
 }
 
-export function clearProgress(storage: KVStorage | null = browserStorage()): void {
+export function clearProgress(storage: KVStorage | null = browserStorage(), lang = activeLanguage(storage)): void {
   try {
-    storage?.removeItem(STORAGE_KEY);
+    storage?.removeItem(progressKey(lang));
   } catch {
     /* ignore */
   }

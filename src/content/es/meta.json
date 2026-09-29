@@ -1,0 +1,31 @@
+{
+  "code": "es",
+  "name": "Spanish",
+  "status": "preview",
+  "greetings": {
+    "morning": "Buenos días",
+    "afternoon": "Buenas tardes",
+    "evening": "Buenas noches"
+  },
+  "registers": {
+    "informal": {
+      "label": "tú",
+      "forms": "perdona, puedes, sabes"
+    },
+    "formal": {
+      "label": "usted",
+      "forms": "perdone, puede, sabe, third-person verbs"
+    }
+  },
+  "auxiliaries": ["haber"],
+  "pastTense": "pretérito perfecto",
+  "tutorPromptExample": "Is this a lasting trait or a temporary state? Which verb for \"to be\" does that need?",
+  "ttsLang": "es-ES",
+  "srLang": "es-ES",
+  "baseLang": "en",
+  "accentKeys": ["á", "é", "í", "ó", "ú", "ñ", "ü", "¿", "¡"],
+  "persons": ["yo", "tu", "el", "nosotros", "vosotros", "ellos"],
+  "personLabels": ["yo", "tú", "él/ella/usted", "nosotros", "vosotros", "ellos/ellas/ustedes"],
+  "zipfListSize": 6500,
+  "note": "Preview pack: starter content that exercises every part of the app, to be grown into a full A1-A2 course. Ranks are approximate, from general knowledge of Spanish frequency lists. Forms follow Spain (vosotros); the course will note Latin American usage as it grows. The Zipf list size uses the same calibration as Italian."
+}

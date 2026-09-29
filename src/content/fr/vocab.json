@@ -1,0 +1,285 @@
+[
+  {
+    "id": "w-de",
+    "rank": 1,
+    "lemma": "de",
+    "pos": "prep",
+    "note": "Combines with le and les: du, des. Before a vowel it becomes d’.",
+    "translations": ["of", "from", "about"],
+    "example": {
+      "l2": "Le livre de Marie est sur la table.",
+      "en": "Marie's book is on the table."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-le",
+    "rank": 2,
+    "lemma": "le",
+    "pos": "art",
+    "note": "Forms: le (masculine), la (feminine), l' (before a vowel), les (plural).",
+    "translations": ["the"],
+    "example": {
+      "l2": "Le train part à huit heures.",
+      "en": "The train leaves at eight."
+    },
+    "tags": ["function", "article"]
+  },
+  {
+    "id": "w-et",
+    "rank": 3,
+    "lemma": "et",
+    "pos": "conj",
+    "translations": ["and"],
+    "example": {
+      "l2": "Je voudrais un café et un croissant.",
+      "en": "I'd like a coffee and a croissant."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-a",
+    "rank": 4,
+    "lemma": "à",
+    "pos": "prep",
+    "note": "Combines with le and les: au, aux.",
+    "translations": ["to", "at", "in"],
+    "example": {
+      "l2": "Je vais à Paris demain.",
+      "en": "I'm going to Paris tomorrow."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-un",
+    "rank": 5,
+    "lemma": "un",
+    "pos": "art",
+    "note": "Forms: un (masculine), une (feminine), des (plural).",
+    "translations": ["a", "an", "one"],
+    "example": {
+      "l2": "J'ai un frère et une sœur.",
+      "en": "I have a brother and a sister."
+    },
+    "tags": ["function", "article"]
+  },
+  {
+    "id": "w-il",
+    "rank": 6,
+    "lemma": "il",
+    "pos": "pron",
+    "translations": ["he", "it"],
+    "example": {
+      "l2": "Il est très gentil.",
+      "en": "He is very kind."
+    },
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "w-pas",
+    "rank": 7,
+    "lemma": "pas",
+    "pos": "adv",
+    "note": "Negation wraps the verb: ne … pas. In speech the ne is often dropped.",
+    "translations": ["not"],
+    "example": {
+      "l2": "Je ne sais pas.",
+      "en": "I don't know."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-je",
+    "rank": 8,
+    "lemma": "je",
+    "pos": "pron",
+    "note": "Becomes j' before a vowel: j'ai, j'aime.",
+    "translations": ["I"],
+    "example": {
+      "l2": "Je suis étudiant.",
+      "en": "I'm a student."
+    },
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "w-que",
+    "rank": 9,
+    "lemma": "que",
+    "pos": "conj",
+    "translations": ["that", "what"],
+    "example": {
+      "l2": "Je pense que c'est vrai.",
+      "en": "I think that it's true."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-dans",
+    "rank": 10,
+    "lemma": "dans",
+    "pos": "prep",
+    "translations": ["in", "inside"],
+    "example": {
+      "l2": "Le chat est dans la cuisine.",
+      "en": "The cat is in the kitchen."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-en",
+    "rank": 11,
+    "lemma": "en",
+    "pos": "prep",
+    "translations": ["in", "by"],
+    "example": {
+      "l2": "Nous allons en France en train.",
+      "en": "We're going to France by train."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-pour",
+    "rank": 12,
+    "lemma": "pour",
+    "pos": "prep",
+    "translations": ["for", "in order to"],
+    "example": {
+      "l2": "C'est un cadeau pour toi.",
+      "en": "It's a present for you."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-qui",
+    "rank": 13,
+    "lemma": "qui",
+    "pos": "pron",
+    "translations": ["who"],
+    "example": {
+      "l2": "Qui est là ?",
+      "en": "Who's there?"
+    },
+    "tags": ["question"]
+  },
+  {
+    "id": "w-sur",
+    "rank": 14,
+    "lemma": "sur",
+    "pos": "prep",
+    "translations": ["on"],
+    "example": {
+      "l2": "Les clés sont sur la table.",
+      "en": "The keys are on the table."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-avec",
+    "rank": 15,
+    "lemma": "avec",
+    "pos": "prep",
+    "translations": ["with"],
+    "example": {
+      "l2": "Je parle avec mon ami.",
+      "en": "I'm talking with my friend."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-tout",
+    "rank": 16,
+    "lemma": "tout",
+    "pos": "det",
+    "translations": ["all", "every", "everything"],
+    "example": {
+      "l2": "Tout le monde est là.",
+      "en": "Everyone is here."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-plus",
+    "rank": 17,
+    "lemma": "plus",
+    "pos": "adv",
+    "translations": ["more"],
+    "example": {
+      "l2": "Je voudrais plus de pain.",
+      "en": "I'd like more bread."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-bien",
+    "rank": 18,
+    "lemma": "bien",
+    "pos": "adv",
+    "translations": ["well", "good"],
+    "example": {
+      "l2": "Je vais bien, merci.",
+      "en": "I'm fine, thanks."
+    },
+    "tags": ["everyday"]
+  },
+  {
+    "id": "w-temps",
+    "rank": 19,
+    "lemma": "temps",
+    "pos": "noun",
+    "gender": "m",
+    "article": "le",
+    "plural": "temps",
+    "translations": ["time", "weather"],
+    "example": {
+      "l2": "Je n'ai pas le temps.",
+      "en": "I don't have time."
+    },
+    "tags": ["everyday"]
+  },
+  {
+    "id": "w-jour",
+    "rank": 20,
+    "lemma": "jour",
+    "pos": "noun",
+    "gender": "m",
+    "article": "le",
+    "plural": "jours",
+    "translations": ["day"],
+    "example": {
+      "l2": "C'est un beau jour.",
+      "en": "It's a beautiful day."
+    },
+    "tags": ["time"]
+  },
+  {
+    "id": "w-ami",
+    "rank": 21,
+    "lemma": "ami",
+    "pos": "noun",
+    "gender": "m",
+    "article": "l'",
+    "plural": "amis",
+    "note": "A female friend is une amie.",
+    "translations": ["friend"],
+    "example": {
+      "l2": "Mon ami habite à Lyon.",
+      "en": "My friend lives in Lyon."
+    },
+    "tags": ["people"]
+  },
+  {
+    "id": "w-maison",
+    "rank": 22,
+    "lemma": "maison",
+    "pos": "noun",
+    "gender": "f",
+    "article": "la",
+    "plural": "maisons",
+    "translations": ["house", "home"],
+    "example": {
+      "l2": "La maison est grande.",
+      "en": "The house is big."
+    },
+    "tags": ["home"]
+  }
+]

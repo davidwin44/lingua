@@ -1,0 +1,86 @@
+[
+  {
+    "id": "v-ser",
+    "rank": 4,
+    "infinitive": "ser",
+    "translation": "to be",
+    "auxiliary": "haber",
+    "pastParticiple": "sido",
+    "present": {
+      "yo": "soy",
+      "tu": "eres",
+      "el": "es",
+      "nosotros": "somos",
+      "vosotros": "sois",
+      "ellos": "son"
+    },
+    "imperfect": {
+      "yo": "era",
+      "tu": "eras",
+      "el": "era",
+      "nosotros": "éramos",
+      "vosotros": "erais",
+      "ellos": "eran"
+    },
+    "example": {
+      "l2": "Soy de Madrid.",
+      "en": "I'm from Madrid."
+    }
+  },
+  {
+    "id": "v-estar",
+    "rank": 9,
+    "infinitive": "estar",
+    "translation": "to be",
+    "auxiliary": "haber",
+    "pastParticiple": "estado",
+    "present": {
+      "yo": "estoy",
+      "tu": "estás",
+      "el": "está",
+      "nosotros": "estamos",
+      "vosotros": "estáis",
+      "ellos": "están"
+    },
+    "imperfect": {
+      "yo": "estaba",
+      "tu": "estabas",
+      "el": "estaba",
+      "nosotros": "estábamos",
+      "vosotros": "estabais",
+      "ellos": "estaban"
+    },
+    "example": {
+      "l2": "Estoy cansado pero contento.",
+      "en": "I'm tired but happy."
+    }
+  },
+  {
+    "id": "v-tener",
+    "rank": 14,
+    "infinitive": "tener",
+    "translation": "to have",
+    "auxiliary": "haber",
+    "pastParticiple": "tenido",
+    "present": {
+      "yo": "tengo",
+      "tu": "tienes",
+      "el": "tiene",
+      "nosotros": "tenemos",
+      "vosotros": "tenéis",
+      "ellos": "tienen"
+    },
+    "imperfect": {
+      "yo": "tenía",
+      "tu": "tenías",
+      "el": "tenía",
+      "nosotros": "teníamos",
+      "vosotros": "teníais",
+      "ellos": "tenían"
+    },
+    "example": {
+      "l2": "Tengo dos hermanos.",
+      "en": "I have two brothers."
+    }
+  }
+]

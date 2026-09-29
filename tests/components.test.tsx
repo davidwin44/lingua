@@ -105,7 +105,9 @@ describe('App flow', () => {
       </AppProvider>,
     );
 
-    // Onboarding: goal → weekly target → start.
+    // Onboarding: language → goal → weekly target → start. Italian is already chosen.
+    expect(screen.getByRole('radio', { name: /Italian/ })).toHaveAttribute('aria-checked', 'true');
+    await user.click(screen.getByRole('button', { name: 'Next' }));
     await user.click(screen.getByRole('radio', { name: /Travel/ }));
     await user.click(screen.getByRole('button', { name: 'Next' }));
     await user.click(screen.getByRole('button', { name: 'Next' }));

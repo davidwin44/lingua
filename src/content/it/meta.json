@@ -1,6 +1,25 @@
 {
   "code": "it",
   "name": "Italian",
+  "status": "full",
+  "greetings": {
+    "morning": "Buongiorno",
+    "afternoon": "Buon pomeriggio",
+    "evening": "Buonasera"
+  },
+  "registers": {
+    "informal": {
+      "label": "tu",
+      "forms": "scusa, puoi, sai"
+    },
+    "formal": {
+      "label": "Lei",
+      "forms": "scusi, può, sa, third-person verbs"
+    }
+  },
+  "auxiliaries": ["avere", "essere"],
+  "pastTense": "passato prossimo",
+  "tutorPromptExample": "Is andare a verb of motion? Which auxiliary do motion verbs take?",
   "ttsLang": "it-IT",
   "srLang": "it-IT",
   "baseLang": "en",

@@ -16,7 +16,7 @@ export function Grammar() {
           <p className="muted">A short explanation and examples, then practice. When you miss, you get a hint before the answer.</p>
         </div>
         <p className="page-head-stat">
-          <strong>{done}</strong> of {lessons.length} lessons
+          <strong>{done}</strong> of {lessons.length} lesson{lessons.length === 1 ? '' : 's'}
         </p>
       </header>
 
@@ -58,35 +58,37 @@ export function Grammar() {
         </ol>
       </section>
 
-      <section className="widget" aria-labelledby="mixed-title">
-        <div className="widget-head">
-          <h2 id="mixed-title">Mixed practice</h2>
-          <p className="muted small">Forms that are easy to confuse, shuffled so you have to decide each time. Do the lesson first.</p>
-        </div>
-        <ul className="card-list card-list-flush">
-          {pack.interleave.map((s) => {
-            const ready = s.introducedIn.every((id) => progress.lessonsCompleted[id]);
-            return (
-              <li key={s.id}>
-                <Link to={`/grammar/mixed/${s.id}`} className="card-row">
-                  <span className="card-row-main">
-                    <span className="card-row-title">{s.title}</span>
-                    {!ready ? (
-                      <span className="card-row-sub">
-                        Recommended after: {s.introducedIn.map((id) => pack.grammar.find((g) => g.id === id)?.title ?? id).join(' and ')}
-                      </span>
-                    ) : (
-                      <span className="card-row-sub">{s.itemIds.length} items</span>
-                    )}
-                  </span>
-                  {ready ? <span className="row-state row-state-ok">Ready</span> : null}
-                  <Icon name="chevron" size={18} />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      {pack.interleave.length > 0 ? (
+        <section className="widget" aria-labelledby="mixed-title">
+          <div className="widget-head">
+            <h2 id="mixed-title">Mixed practice</h2>
+            <p className="muted small">Forms that are easy to confuse, shuffled so you have to decide each time. Do the lesson first.</p>
+          </div>
+          <ul className="card-list card-list-flush">
+            {pack.interleave.map((s) => {
+              const ready = s.introducedIn.every((id) => progress.lessonsCompleted[id]);
+              return (
+                <li key={s.id}>
+                  <Link to={`/grammar/mixed/${s.id}`} className="card-row">
+                    <span className="card-row-main">
+                      <span className="card-row-title">{s.title}</span>
+                      {!ready ? (
+                        <span className="card-row-sub">
+                          Recommended after: {s.introducedIn.map((id) => pack.grammar.find((g) => g.id === id)?.title ?? id).join(' and ')}
+                        </span>
+                      ) : (
+                        <span className="card-row-sub">{s.itemIds.length} items</span>
+                      )}
+                    </span>
+                    {ready ? <span className="row-state row-state-ok">Ready</span> : null}
+                    <Icon name="chevron" size={18} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ) : null}
     </div>
   );
 }

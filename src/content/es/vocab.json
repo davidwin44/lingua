@@ -1,0 +1,286 @@
+[
+  {
+    "id": "w-de",
+    "rank": 1,
+    "lemma": "de",
+    "pos": "prep",
+    "note": "de + el = del.",
+    "translations": ["of", "from", "about"],
+    "example": {
+      "l2": "La casa de mi madre es grande.",
+      "en": "My mother's house is big."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-el",
+    "rank": 2,
+    "lemma": "el",
+    "pos": "art",
+    "note": "Forms: el (masculine), la (feminine), los, las (plural). Without an accent; él (with one) means \"he\".",
+    "translations": ["the"],
+    "example": {
+      "l2": "El tren sale a las ocho.",
+      "en": "The train leaves at eight."
+    },
+    "tags": ["function", "article"]
+  },
+  {
+    "id": "w-que",
+    "rank": 3,
+    "lemma": "que",
+    "pos": "conj",
+    "note": "Without an accent. In questions it is qué: ¿Qué quieres?",
+    "translations": ["that", "what"],
+    "example": {
+      "l2": "Creo que es verdad.",
+      "en": "I think that it's true."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-en",
+    "rank": 4,
+    "lemma": "en",
+    "pos": "prep",
+    "translations": ["in", "on", "at"],
+    "example": {
+      "l2": "Vivo en Madrid.",
+      "en": "I live in Madrid."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-y",
+    "rank": 5,
+    "lemma": "y",
+    "pos": "conj",
+    "translations": ["and"],
+    "example": {
+      "l2": "Quiero un café y una tostada.",
+      "en": "I want a coffee and a piece of toast."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-a",
+    "rank": 6,
+    "lemma": "a",
+    "pos": "prep",
+    "note": "a + el = al.",
+    "translations": ["to", "at"],
+    "example": {
+      "l2": "Voy a la playa mañana.",
+      "en": "I'm going to the beach tomorrow."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-un",
+    "rank": 7,
+    "lemma": "un",
+    "pos": "art",
+    "note": "Forms: un (masculine), una (feminine), unos, unas (some).",
+    "translations": ["a", "an", "one"],
+    "example": {
+      "l2": "Tengo un hermano y una hermana.",
+      "en": "I have a brother and a sister."
+    },
+    "tags": ["function", "article"]
+  },
+  {
+    "id": "w-no",
+    "rank": 8,
+    "lemma": "no",
+    "pos": "adv",
+    "translations": ["no", "not"],
+    "example": {
+      "l2": "No sé.",
+      "en": "I don't know."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-por",
+    "rank": 9,
+    "lemma": "por",
+    "pos": "prep",
+    "translations": ["for", "by", "through"],
+    "example": {
+      "l2": "Gracias por todo.",
+      "en": "Thanks for everything."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-con",
+    "rank": 10,
+    "lemma": "con",
+    "pos": "prep",
+    "translations": ["with"],
+    "example": {
+      "l2": "Hablo con mi amigo.",
+      "en": "I'm talking with my friend."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-para",
+    "rank": 11,
+    "lemma": "para",
+    "pos": "prep",
+    "translations": ["for", "in order to"],
+    "example": {
+      "l2": "Es un regalo para ti.",
+      "en": "It's a present for you."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-su",
+    "rank": 12,
+    "lemma": "su",
+    "pos": "det",
+    "translations": ["his", "her", "their", "your"],
+    "example": {
+      "l2": "Su coche es rojo.",
+      "en": "His car is red."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-yo",
+    "rank": 13,
+    "lemma": "yo",
+    "pos": "pron",
+    "note": "Usually left out, because the verb ending already says who: soy estudiante.",
+    "translations": ["I"],
+    "example": {
+      "l2": "Yo soy estudiante.",
+      "en": "I'm a student."
+    },
+    "tags": ["pronoun"]
+  },
+  {
+    "id": "w-muy",
+    "rank": 14,
+    "lemma": "muy",
+    "pos": "adv",
+    "translations": ["very"],
+    "example": {
+      "l2": "Estoy muy cansado.",
+      "en": "I'm very tired."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-pero",
+    "rank": 15,
+    "lemma": "pero",
+    "pos": "conj",
+    "translations": ["but"],
+    "example": {
+      "l2": "Es pequeño pero bonito.",
+      "en": "It's small but pretty."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-mas",
+    "rank": 16,
+    "lemma": "más",
+    "pos": "adv",
+    "translations": ["more"],
+    "example": {
+      "l2": "Quiero más pan, por favor.",
+      "en": "I want more bread, please."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-bien",
+    "rank": 17,
+    "lemma": "bien",
+    "pos": "adv",
+    "translations": ["well", "fine", "good"],
+    "example": {
+      "l2": "Estoy bien, gracias.",
+      "en": "I'm fine, thanks."
+    },
+    "tags": ["everyday"]
+  },
+  {
+    "id": "w-tambien",
+    "rank": 18,
+    "lemma": "también",
+    "pos": "adv",
+    "translations": ["also", "too"],
+    "example": {
+      "l2": "Yo también quiero ir.",
+      "en": "I want to go too."
+    },
+    "tags": ["function"]
+  },
+  {
+    "id": "w-dia",
+    "rank": 19,
+    "lemma": "día",
+    "pos": "noun",
+    "gender": "m",
+    "article": "el",
+    "plural": "días",
+    "note": "Masculine even though it ends in -a: el día.",
+    "translations": ["day"],
+    "example": {
+      "l2": "Hoy es un buen día.",
+      "en": "Today is a good day."
+    },
+    "tags": ["time"]
+  },
+  {
+    "id": "w-casa",
+    "rank": 20,
+    "lemma": "casa",
+    "pos": "noun",
+    "gender": "f",
+    "article": "la",
+    "plural": "casas",
+    "translations": ["house", "home"],
+    "example": {
+      "l2": "Mi casa está cerca.",
+      "en": "My house is nearby."
+    },
+    "tags": ["home"]
+  },
+  {
+    "id": "w-tiempo",
+    "rank": 21,
+    "lemma": "tiempo",
+    "pos": "noun",
+    "gender": "m",
+    "article": "el",
+    "plural": "tiempos",
+    "translations": ["time", "weather"],
+    "example": {
+      "l2": "No tengo tiempo.",
+      "en": "I don't have time."
+    },
+    "tags": ["everyday"]
+  },
+  {
+    "id": "w-amigo",
+    "rank": 22,
+    "lemma": "amigo",
+    "pos": "noun",
+    "gender": "m",
+    "article": "el",
+    "plural": "amigos",
+    "note": "A female friend is una amiga.",
+    "translations": ["friend"],
+    "example": {
+      "l2": "Mi amigo vive en Sevilla.",
+      "en": "My friend lives in Seville."
+    },
+    "tags": ["people"]
+  }
+]

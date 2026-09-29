@@ -1,0 +1,86 @@
+[
+  {
+    "id": "v-etre",
+    "rank": 4,
+    "infinitive": "être",
+    "translation": "to be",
+    "auxiliary": "avoir",
+    "pastParticiple": "été",
+    "present": {
+      "je": "suis",
+      "tu": "es",
+      "il": "est",
+      "nous": "sommes",
+      "vous": "êtes",
+      "ils": "sont"
+    },
+    "imperfect": {
+      "je": "étais",
+      "tu": "étais",
+      "il": "était",
+      "nous": "étions",
+      "vous": "étiez",
+      "ils": "étaient"
+    },
+    "example": {
+      "l2": "Je suis fatigué mais content.",
+      "en": "I'm tired but happy."
+    }
+  },
+  {
+    "id": "v-avoir",
+    "rank": 7,
+    "infinitive": "avoir",
+    "translation": "to have",
+    "auxiliary": "avoir",
+    "pastParticiple": "eu",
+    "present": {
+      "je": "ai",
+      "tu": "as",
+      "il": "a",
+      "nous": "avons",
+      "vous": "avez",
+      "ils": "ont"
+    },
+    "imperfect": {
+      "je": "avais",
+      "tu": "avais",
+      "il": "avait",
+      "nous": "avions",
+      "vous": "aviez",
+      "ils": "avaient"
+    },
+    "example": {
+      "l2": "J'ai deux frères.",
+      "en": "I have two brothers."
+    }
+  },
+  {
+    "id": "v-aller",
+    "rank": 12,
+    "infinitive": "aller",
+    "translation": "to go",
+    "auxiliary": "être",
+    "pastParticiple": "allé",
+    "present": {
+      "je": "vais",
+      "tu": "vas",
+      "il": "va",
+      "nous": "allons",
+      "vous": "allez",
+      "ils": "vont"
+    },
+    "imperfect": {
+      "je": "allais",
+      "tu": "allais",
+      "il": "allait",
+      "nous": "allions",
+      "vous": "alliez",
+      "ils": "allaient"
+    },
+    "example": {
+      "l2": "Nous allons au marché.",
+      "en": "We're going to the market."
+    }
+  }
+]

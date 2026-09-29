@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../state/AppContext';
 import { useInstallState, useSpeak, useVoices } from '../state/hooks';
 import { promptInstall } from '../lib/install';
@@ -6,6 +7,7 @@ import { intervalMultiplier } from '../lib/fsrs';
 import { DEFAULT_MODEL } from '../lib/claude';
 import { createFreshProgress } from '../lib/progress';
 import { exportProgress, importProgress } from '../lib/storage';
+import { LanguagePicker } from '../components/LanguagePicker';
 import { ttsSupported } from '../lib/tts';
 import { srSupported } from '../lib/speech';
 import type { Goal, GoalReason, Settings as SettingsT } from '../lib/types';
@@ -25,6 +27,7 @@ export function workloadNote(r: number): string {
 
 export function Settings() {
   const { pack, progress, update, replace } = useApp();
+  const navigate = useNavigate();
   const s = progress.settings;
   const voices = useVoices(pack.meta.ttsLang);
   const say = useSpeak();
@@ -77,6 +80,12 @@ export function Settings() {
           {message}
         </p>
       ) : null}
+
+      <section className="section" aria-labelledby="set-lang">
+        <h2 id="set-lang">Language</h2>
+        <p className="muted">Each language keeps its own progress, goal and settings. Switching never deletes anything.</p>
+        <LanguagePicker onPick={() => navigate('/')} />
+      </section>
 
       <section className="section" aria-labelledby="set-install">
         <h2 id="set-install">Desktop app</h2>

@@ -1,0 +1,118 @@
+{
+  "id": "g-es-articles",
+  "order": 1,
+  "title": "Nouns, gender and articles",
+  "level": "A1",
+  "explanation": "Every Spanish noun is **masculine** or **feminine**, and the article tells you which. Learn each noun with its article.\n\n- **el** before a masculine noun: *el libro* (the book)\n- **la** before a feminine noun: *la mesa* (the table)\n- **los** and **las** in the plural: *los libros*, *las mesas*\n\nFor *a* or *an*, use **un** with masculine nouns and **una** with feminine ones: *un libro*, *una mesa*. In the plural, **unos** and **unas** mean *some*.\n\nMost nouns in *-o* are masculine and most in *-a* are feminine, but not all: *el día*, *la mano*. Two contractions are compulsory: **a + el = al** and **de + el = del**.",
+  "table": {
+    "headers": ["", "masculine", "feminine"],
+    "rows": [
+      ["the", "el", "la"],
+      ["the (plural)", "los", "las"],
+      ["a, an", "un", "una"],
+      ["some (plural)", "unos", "unas"]
+    ]
+  },
+  "examples": [
+    {
+      "l2": "El libro está en la mesa.",
+      "en": "The book is on the table."
+    },
+    {
+      "l2": "Las llaves están en el coche.",
+      "en": "The keys are in the car."
+    },
+    {
+      "l2": "Tengo una hermana y dos hermanos.",
+      "en": "I have a sister and two brothers."
+    }
+  ],
+  "drills": [
+    {
+      "id": "d-es-art-01",
+      "type": "cloze",
+      "prompt": "Leo ___ libro.",
+      "en": "I'm reading the book.",
+      "answer": ["el"],
+      "category": "def-article",
+      "hints": ["Is libro masculine or feminine?", "Libro ends in -o and is masculine."],
+      "explanation": "Libro is masculine: el libro."
+    },
+    {
+      "id": "d-es-art-02",
+      "type": "cloze",
+      "prompt": "¿Dónde está ___ mesa?",
+      "en": "Where is the table?",
+      "answer": ["la"],
+      "category": "def-article",
+      "hints": ["Is mesa masculine or feminine?", "Mesa ends in -a and is feminine."],
+      "explanation": "Mesa is feminine: la mesa."
+    },
+    {
+      "id": "d-es-art-03",
+      "type": "cloze",
+      "prompt": "Busco ___ llaves.",
+      "en": "I'm looking for the keys.",
+      "answer": ["las"],
+      "category": "def-article",
+      "hints": ["Is llaves singular or plural? And what gender is llave?", "Llave is feminine. Which plural article goes with feminine nouns?"],
+      "explanation": "Llaves is feminine plural: las llaves."
+    },
+    {
+      "id": "d-es-art-04",
+      "type": "cloze",
+      "prompt": "Tengo ___ perro.",
+      "en": "I have a dog.",
+      "answer": ["un"],
+      "category": "indef-article",
+      "hints": [
+        "Is perro masculine or feminine?",
+        "Perro is masculine. Which word for \"a\" goes with masculine nouns?"
+      ],
+      "explanation": "Perro is masculine: un perro."
+    },
+    {
+      "id": "d-es-art-05",
+      "type": "cloze",
+      "prompt": "Ella tiene ___ bicicleta.",
+      "en": "She has a bicycle.",
+      "answer": ["una"],
+      "category": "indef-article",
+      "hints": [
+        "Is bicicleta masculine or feminine?",
+        "Bicicleta is feminine. Which word for \"a\" goes with feminine nouns?"
+      ],
+      "explanation": "Bicicleta is feminine: una bicicleta."
+    },
+    {
+      "id": "d-es-art-06",
+      "type": "cloze",
+      "prompt": "Veo a ___ niños en el parque.",
+      "en": "I see the children in the park.",
+      "answer": ["los"],
+      "category": "def-article",
+      "hints": ["Is niños singular or plural?", "Niño is masculine. Which plural article goes with masculine nouns?"],
+      "explanation": "Niños is masculine plural: los niños."
+    },
+    {
+      "id": "d-es-art-07",
+      "type": "cloze",
+      "prompt": "Hoy es ___ día bonito.",
+      "en": "Today is a nice day.",
+      "answer": ["un"],
+      "category": "indef-article",
+      "hints": ["Día ends in -a. Is it really feminine?", "Día is one of the few masculine nouns that end in -a."],
+      "explanation": "Día is masculine despite the -a: un día, el día."
+    },
+    {
+      "id": "d-es-art-08",
+      "type": "cloze",
+      "prompt": "Mañana tomo ___ tren de las ocho.",
+      "en": "Tomorrow I'm taking the eight o'clock train.",
+      "answer": ["el"],
+      "category": "def-article",
+      "hints": ["Is tren masculine or feminine?", "Tren is masculine."],
+      "explanation": "Tren is masculine: el tren."
+    }
+  ]
+}

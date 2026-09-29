@@ -110,7 +110,8 @@ Each learner turn gets a reply of 1–3 sentences and at most two corrections, r
 
 ## Your data
 
-- Stored under the versioned key `lingua:v1`. Every access is wrapped in try/catch, and corrupted data falls back to a fresh start.
+- Each language keeps its own progress. Italian is stored under the versioned key `lingua:v1` (the original key, so older progress loads unchanged), other languages under `lingua:v1:<code>`, and `lingua:active` remembers which one is open. Every access is wrapped in try/catch, and corrupted data falls back to a fresh start.
+- Switch language in onboarding or **Settings → Language**. Nothing is deleted. A language opened for the first time starts with your current settings (daily limits, tutor key) but its own goal and voice.
 - **Settings → Your data** exports all progress as JSON and imports it again, for backups or moving devices.
 
 ## Adding a language
@@ -119,7 +120,7 @@ Each learner turn gets a reply of 1–3 sentences and at most two corrections, r
 
    | File | Contents |
    |---|---|
-   | `meta.json` | Code, name, TTS and speech-recognition locale, accent keys, person labels, Zipf list size |
+   | `meta.json` | Code, name, `status` (`full` or `preview`), greetings, informal and formal registers, auxiliaries and the name of the compound past, a model tutor prompt, TTS and speech-recognition locale, accent keys, person labels, Zipf list size |
    | `vocab.json` | About 150 words, ranks 1..N with no gaps; nouns need gender and article |
    | `verbs.json` | Present and imperfect tables keyed by the `persons` in `meta.json` |
    | `grammar/*.json` | One lesson per file, with 8–12 drills of exactly 2 hints each |
@@ -131,12 +132,16 @@ Each learner turn gets a reply of 1–3 sentences and at most two corrections, r
 3. Add one line to `src/content/index.ts`:
 
    ```ts
-   export const languages = { it: italianPack, es: spanishPack };
+   export const languages = { it: italianPack, fr: frenchPack, es: spanishPack };
    ```
+
+   The language picker lists complete courses first, then previews, labelled as such.
 
 4. Run `npm test`. The content validator (`src/content/validate.ts`) checks every registered pack. It flags duplicate ids, rank gaps, drills without 2 hints or an answer, interleave sets with unknown ids or fewer than 2 categories, unglossed passage tokens, and out-of-range `answerIndex` values.
 
-Bilingual fields use `{ "l2": "...", "en": "..." }`, so the same types work for any target language.
+Bilingual fields use `{ "l2": "...", "en": "..." }`, so the same types work for any target language. Scenarios set `register` to `informal` or `formal`; the pack's `meta.registers` names them (tu/Lei, tu/vous, tú/usted).
+
+French (`fr/`) and Spanish (`es/`) are **preview** packs: a starter word list, three verbs, one grammar lesson, one passage, and a few production, role-play and pronunciation items. They run every part of the app and pass the same validator, and grow into full courses by adding files.
 
 ## Project layout
 

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pn-fr-u-ou",
+    "kind": "pair",
+    "title": "tu / tout",
+    "sound": "u and ou",
+    "words": [
+      {
+        "text": "tu",
+        "en": "you"
+      },
+      {
+        "text": "tout",
+        "en": "all"
+      }
+    ],
+    "tip": "For u, round your lips as if to say “oo”, then say “ee”. For ou, just say “oo”."
+  },
+  {
+    "id": "pn-fr-vin-vent",
+    "kind": "pair",
+    "title": "vin / vent",
+    "sound": "nasal vowels",
+    "words": [
+      {
+        "text": "vin",
+        "en": "wine"
+      },
+      {
+        "text": "vent",
+        "en": "wind"
+      }
+    ],
+    "tip": "Both vowels go through the nose. Vin is said with the mouth flatter and more open; vent with it rounder and further back."
+  },
+  {
+    "id": "pn-fr-r",
+    "kind": "sound",
+    "title": "The French r",
+    "sound": "r",
+    "words": [
+      {
+        "text": "rouge",
+        "en": "red"
+      },
+      {
+        "text": "Paris",
+        "en": "Paris"
+      },
+      {
+        "text": "merci",
+        "en": "thank you"
+      }
+    ],
+    "tip": "Make the r at the back of the throat, like a light gargle, not with the tip of the tongue."
+  }
+]

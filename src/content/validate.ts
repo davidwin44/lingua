@@ -8,6 +8,12 @@ import { tokenize } from '../lib/text';
 export function validatePack(pack: LanguagePack): string[] {
   const errors: string[] = [];
   const seen = new Map<string, string>();
+  const { meta } = pack;
+  if (meta.status !== 'full' && meta.status !== 'preview') errors.push('Meta: status must be "full" or "preview"');
+  if (!meta.greetings?.morning || !meta.greetings?.afternoon || !meta.greetings?.evening) errors.push('Meta: needs three greetings');
+  if (!meta.registers?.informal?.label || !meta.registers?.formal?.label) errors.push('Meta: needs informal and formal registers');
+  if (!meta.auxiliaries?.length) errors.push('Meta: needs at least one auxiliary');
+  if (!meta.pastTense) errors.push('Meta: needs the name of the compound past');
   const claim = (id: string, where: string) => {
     if (!id) errors.push(`${where}: missing id`);
     else if (seen.has(id)) errors.push(`Duplicate id "${id}" (${where} and ${seen.get(id)})`);
@@ -32,6 +38,7 @@ export function validatePack(pack: LanguagePack): string[] {
     claim(v.id, 'verbs');
     if (verbRanks.has(v.rank)) errors.push(`Verb ${v.id}: duplicate rank ${v.rank}`);
     verbRanks.add(v.rank);
+    if (!meta.auxiliaries?.includes(v.auxiliary)) errors.push(`Verb ${v.id}: auxiliary "${v.auxiliary}" is not in meta.auxiliaries`);
     for (const person of pack.meta.persons) {
       if (!v.present[person]) errors.push(`Verb ${v.id}: missing present form for ${person}`);
       if (!v.imperfect[person]) errors.push(`Verb ${v.id}: missing imperfect form for ${person}`);
@@ -111,7 +118,7 @@ export function validatePack(pack: LanguagePack): string[] {
 
   for (const s of pack.scenarios) {
     claim(s.id, 'scenario');
-    if (s.register !== 'tu' && s.register !== 'Lei') errors.push(`Scenario ${s.id}: register must be tu or Lei`);
+    if (s.register !== 'informal' && s.register !== 'formal') errors.push(`Scenario ${s.id}: register must be informal or formal`);
   }
   const scenarioIds = new Set(pack.scenarios.map((s) => s.id));
 

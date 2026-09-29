@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pr-es-01",
+    "en": "I am tired.",
+    "accepted": ["Estoy cansado.", "Estoy cansada.", "Yo estoy cansado.", "Yo estoy cansada."],
+    "hint": "Tiredness is a temporary state. Does that take ser or estar?",
+    "targetStructure": "estar + adjective"
+  },
+  {
+    "id": "pr-es-02",
+    "en": "I have a sister.",
+    "accepted": ["Tengo una hermana.", "Yo tengo una hermana."],
+    "hint": "Use tener. Hermana is feminine, so which word for \"a\"?",
+    "targetStructure": "tener + indefinite article"
+  },
+  {
+    "id": "pr-es-03",
+    "en": "The house is big.",
+    "accepted": ["La casa es grande."],
+    "hint": "Casa is feminine. Is size a lasting trait (ser) or a temporary state (estar)?",
+    "targetStructure": "definite article + ser",
+    "lessonId": "g-es-articles"
+  }
+]

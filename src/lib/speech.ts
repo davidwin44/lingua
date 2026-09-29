@@ -192,13 +192,19 @@ export function alignWords(expected: string[], heard: string[]): WordMatch[] {
 
 const VOWELS = 'aeiouàèéìíòóùú';
 
-/** Specific, explicit feedback for one mismatched word. */
-export function explainMismatch(expected: string, heard: string): string {
+/**
+ * Specific, explicit feedback for one mismatched word. The accent rule applies to every
+ * language; the consonant and final-vowel rules are Italian and run only for `lang` "it".
+ */
+export function explainMismatch(expected: string, heard: string, lang = 'it'): string {
   const quote = `heard “${heard}”, expected “${expected}”`;
   if (stripAccents(expected) === stripAccents(heard)) {
+    // Italian and Spanish accents mark stress; French accents mark vowel quality.
+    if (lang === 'fr') return `${quote}: check the accented vowel`;
     const last = Array.from(expected).pop() ?? '';
     return stripAccents(last) !== last ? `${quote}: stress the final vowel` : `${quote}: check the stressed (accented) vowel`;
   }
+  if (lang !== 'it') return quote;
   const doubled = expected.match(/([bcdfglmnprstvz])\1/);
   if (doubled && heard === expected.replace(doubled[0], doubled[1])) {
     return `${quote}: hold the double “${doubled[0]}” a little longer`;
@@ -221,7 +227,7 @@ export function explainMismatch(expected: string, heard: string): string {
 }
 
 /** Score the best-matching alternative against the target. */
-export function scorePronunciation(target: string, alternatives: string[]): PronResult {
+export function scorePronunciation(target: string, alternatives: string[], lang = 'it'): PronResult {
   const normTarget = normalize(target);
   const tWords = normTarget.split(' ').filter(Boolean);
   let best: PronResult | null = null;
@@ -233,7 +239,7 @@ export function scorePronunciation(target: string, alternatives: string[]): Pron
     const feedback: string[] = [];
     for (const w of words) {
       if (w.match) continue;
-      if (w.expected && w.heard) feedback.push(explainMismatch(w.expected, w.heard));
+      if (w.expected && w.heard) feedback.push(explainMismatch(w.expected, w.heard, lang));
       else if (w.expected) feedback.push(`“${w.expected}” wasn’t picked up; say it clearly`);
     }
     best = { score, verdict: verdictFor(score), heard: alt, words, feedback: feedback.slice(0, 3) };

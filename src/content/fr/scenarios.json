@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sc-fr-cafe",
+    "title": "At a café with a friend",
+    "register": "informal",
+    "level": "A1",
+    "goal": "Order a drink and something to eat, ask your friend what they want, and pay at the end.",
+    "role": "Your friend Camille, meeting you at a café in Lyon. Relaxed and friendly; uses tu.",
+    "opening": "Salut ! Enfin ! Alors, qu'est-ce que tu prends ?",
+    "openingEn": "Hi! At last! So, what are you having?",
+    "focus": "tu forms (tu prends, tu veux) and ordering with 'je voudrais'"
+  },
+  {
+    "id": "sc-fr-hotel",
+    "title": "Checking into a hotel",
+    "register": "formal",
+    "level": "A1",
+    "goal": "Give your name, say how many nights you are staying, and ask what time breakfast is.",
+    "role": "The receptionist at a small hotel in Paris. Polite and patient; uses vous.",
+    "opening": "Bonjour ! Je peux vous aider ?",
+    "openingEn": "Hello! Can I help you?",
+    "focus": "vous forms and polite requests with 'je voudrais'"
+  }
+]

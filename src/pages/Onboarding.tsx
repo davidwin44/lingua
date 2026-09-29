@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../state/AppContext';
 import type { Goal, GoalReason } from '../lib/types';
+import { LanguagePicker } from '../components/LanguagePicker';
 
 export const GOAL_LABELS: Record<GoalReason, { title: string; blurb: string }> = {
   travel: { title: 'Travel', blurb: 'Ordering, directions, hotels, small talk' },
@@ -17,8 +18,9 @@ const PRESETS: Record<Goal['unit'], number[]> = {
 };
 
 /**
- * Onboarding: a real-world goal and a WEEKLY target (Principle 10). Learners with a concrete
- * goal progress faster; weekly targets absorb missed days instead of punishing them.
+ * Onboarding: the language, then a real-world goal and a WEEKLY target (Principle 10).
+ * Learners with a concrete goal progress faster; weekly targets absorb missed days instead
+ * of punishing them.
  */
 export function Onboarding() {
   const { pack, update } = useApp();
@@ -39,10 +41,21 @@ export function Onboarding() {
       <div className="onboarding-inner">
         <header className="onboarding-head">
           <p className="brand-name">Lingua</p>
-          <p className="onboarding-step">Step {step + 1} of 3</p>
+          <p className="onboarding-step">Step {step + 1} of 4</p>
         </header>
 
         {step === 0 ? (
+          <section aria-labelledby="ob-lang">
+            <h1 id="ob-lang">What do you want to learn?</h1>
+            <p className="muted">Each language keeps its own progress, so you can switch later without losing any.</p>
+            <LanguagePicker />
+            <button type="button" className="btn btn-primary" onClick={() => setStep(1)}>
+              Next
+            </button>
+          </section>
+        ) : null}
+
+        {step === 1 ? (
           <section aria-labelledby="ob-goal">
             <h1 id="ob-goal">Why are you learning {pack.meta.name}?</h1>
             <p className="muted">You can change this later.</p>
@@ -64,13 +77,18 @@ export function Onboarding() {
                 </button>
               ))}
             </div>
-            <button type="button" className="btn btn-primary" disabled={!reason} onClick={() => setStep(1)}>
-              Next
-            </button>
+            <div className="row-wrap">
+              <button type="button" className="btn btn-primary" disabled={!reason} onClick={() => setStep(2)}>
+                Next
+              </button>
+              <button type="button" className="btn btn-link" onClick={() => setStep(0)}>
+                Back
+              </button>
+            </div>
           </section>
         ) : null}
 
-        {step === 1 ? (
+        {step === 2 ? (
           <section aria-labelledby="ob-week">
             <h1 id="ob-week">How much each week?</h1>
             <p className="muted">Counted per week, so a missed day doesn’t matter.</p>
@@ -100,17 +118,17 @@ export function Onboarding() {
               ))}
             </div>
             <div className="row-wrap">
-              <button type="button" className="btn btn-primary" onClick={() => setStep(2)}>
+              <button type="button" className="btn btn-primary" onClick={() => setStep(3)}>
                 Next
               </button>
-              <button type="button" className="btn btn-link" onClick={() => setStep(0)}>
+              <button type="button" className="btn btn-link" onClick={() => setStep(1)}>
                 Back
               </button>
             </div>
           </section>
         ) : null}
 
-        {step === 2 ? (
+        {step === 3 ? (
           <section aria-labelledby="ob-how">
             <h1 id="ob-how">How it works</h1>
             <ol className="how-list">
@@ -122,7 +140,7 @@ export function Onboarding() {
               <button type="button" className="btn btn-primary" onClick={finish}>
                 Start learning
               </button>
-              <button type="button" className="btn btn-link" onClick={() => setStep(1)}>
+              <button type="button" className="btn btn-link" onClick={() => setStep(2)}>
                 Back
               </button>
             </div>

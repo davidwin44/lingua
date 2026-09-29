@@ -1,0 +1,19 @@
+[
+  {
+    "id": "cd-fr-cafe",
+    "text": "I can order something to eat and drink",
+    "requires": {
+      "passages": ["p-fr-au-cafe"],
+      "production": ["pr-fr-02"]
+    },
+    "practise": ["sc-fr-cafe"]
+  },
+  {
+    "id": "cd-fr-describe",
+    "text": "I can say how I am and describe things around me",
+    "requires": {
+      "lessons": ["g-fr-articles"],
+      "production": ["pr-fr-01", "pr-fr-03"]
+    }
+  }
+]

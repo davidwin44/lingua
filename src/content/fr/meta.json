@@ -1,0 +1,31 @@
+{
+  "code": "fr",
+  "name": "French",
+  "status": "preview",
+  "greetings": {
+    "morning": "Bonjour",
+    "afternoon": "Bonjour",
+    "evening": "Bonsoir"
+  },
+  "registers": {
+    "informal": {
+      "label": "tu",
+      "forms": "salut, tu peux, tu sais"
+    },
+    "formal": {
+      "label": "vous",
+      "forms": "excusez-moi, vous pouvez, vous savez"
+    }
+  },
+  "auxiliaries": ["avoir", "être"],
+  "pastTense": "passé composé",
+  "tutorPromptExample": "Is aller a verb of motion? Which auxiliary do motion verbs take in the passé composé?",
+  "ttsLang": "fr-FR",
+  "srLang": "fr-FR",
+  "baseLang": "en",
+  "accentKeys": ["é", "è", "ê", "à", "â", "ç", "î", "ô", "û", "ù", "ë", "ï", "œ", "'"],
+  "persons": ["je", "tu", "il", "nous", "vous", "ils"],
+  "personLabels": ["je/j'", "tu", "il/elle/on", "nous", "vous", "ils/elles"],
+  "zipfListSize": 6500,
+  "note": "Preview pack: starter content that exercises every part of the app, to be grown into a full A1-A2 course. Ranks are approximate, from general knowledge of French frequency lists. The Zipf list size uses the same calibration as Italian (top 1,000 lemmas cover about 80% of running text)."
+}

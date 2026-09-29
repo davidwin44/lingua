@@ -9,7 +9,7 @@
  *
  * The API key lives only in this browser's localStorage and is sent only to api.anthropic.com.
  */
-import type { Scenario } from '../content/types';
+import type { LangMeta, Scenario } from '../content/types';
 
 export const DEFAULT_MODEL = 'claude-opus-5';
 export const API_URL = 'https://api.anthropic.com/v1/messages';
@@ -37,11 +37,13 @@ export interface ChatMessage {
   content: string;
 }
 
-export function buildSystemPrompt(scenario: Scenario, languageName: string): string {
+export function buildSystemPrompt(scenario: Scenario, meta: LangMeta): string {
+  const languageName = meta.name;
+  const { informal, formal } = meta.registers;
   const registerRule =
-    scenario.register === 'Lei'
-      ? 'This situation is FORMAL: you address the learner with Lei, and they should address you with Lei (scusi, può, sa, third-person verbs). If they use tu forms with you, that is a register error.'
-      : 'This situation is INFORMAL: you and the learner use tu with each other (scusa, puoi, sai). If they use Lei forms with you, that is a register error.';
+    scenario.register === 'formal'
+      ? `This situation is FORMAL: you address the learner with ${formal.label}, and they should address you with ${formal.label} (${formal.forms}). If they use ${informal.label} forms with you, that is a register error.`
+      : `This situation is INFORMAL: you and the learner use ${informal.label} with each other (${informal.forms}). If they use ${formal.label} forms with you, that is a register error.`;
   return [
     `You are a patient ${languageName} conversation partner for an adult learner at CEFR level ${scenario.level} (A1/A2).`,
     `Role-play scenario: "${scenario.title}". You play: ${scenario.role}`,
@@ -52,12 +54,12 @@ export function buildSystemPrompt(scenario: Scenario, languageName: string): str
     'Rules:',
     `- Stay in character and in ${languageName}. Keep every reply to 1-3 short, simple sentences at the learner's level, using high-frequency words.`,
     '- Move the scenario forward and help the learner reach their goal; ask one simple question at a time.',
-    '- After every learner turn, identify at most 2 errors. Prioritise errors that hurt comprehension and register (tu/Lei) over small slips. Ignore missing capitals and punctuation. If there are no real errors, return an empty list.',
-    '- For each error give a short metalinguistic "prompt" that helps the learner self-correct WITHOUT giving the answer (e.g. "Is andare a verb of motion? Which auxiliary do motion verbs take?"), then the "correction" (the corrected phrase) and a one-sentence English "explanation".',
-    '- If the learner writes in English, reply in simple Italian and gently encourage them to try in Italian.',
+    `- After every learner turn, identify at most 2 errors. Prioritise errors that hurt comprehension and register (${informal.label}/${formal.label}) over small slips. Ignore missing capitals and punctuation. If there are no real errors, return an empty list.`,
+    `- For each error give a short metalinguistic "prompt" that helps the learner self-correct WITHOUT giving the answer (e.g. "${meta.tutorPromptExample}"), then the "correction" (the corrected phrase) and a one-sentence English "explanation".`,
+    `- If the learner writes in English, reply in simple ${languageName} and gently encourage them to try in ${languageName}.`,
     '',
     'Respond with ONLY a JSON object, no other text, in exactly this shape:',
-    '{"reply": string (your in-character Italian reply), "reply_en": string (English translation of your reply), "errors": [{"span": string (the learner\'s erroneous words, copied exactly), "type": "grammar" | "vocab" | "register" | "spelling", "prompt": string, "correction": string, "explanation": string}]}',
+    `{"reply": string (your in-character ${languageName} reply), "reply_en": string (English translation of your reply), "errors": [{"span": string (the learner's erroneous words, copied exactly), "type": "grammar" | "vocab" | "register" | "spelling", "prompt": string, "correction": string, "explanation": string}]}`,
   ]
     .filter((line) => line !== null)
     .join('\n');

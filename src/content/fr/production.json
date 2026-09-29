@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pr-fr-01",
+    "en": "I am tired.",
+    "accepted": ["Je suis fatigué.", "Je suis fatiguée."],
+    "hint": "How you feel uses être. What is the je form?",
+    "targetStructure": "être + adjective"
+  },
+  {
+    "id": "pr-fr-02",
+    "en": "I have a sister.",
+    "accepted": ["J'ai une sœur.", "J'ai une soeur."],
+    "hint": "Use avoir, and remember that je becomes j’ before a vowel.",
+    "targetStructure": "avoir + indefinite article"
+  },
+  {
+    "id": "pr-fr-03",
+    "en": "The house is big.",
+    "accepted": ["La maison est grande."],
+    "hint": "Maison is feminine, so the article and the adjective both agree with it.",
+    "targetStructure": "definite article + adjective agreement",
+    "lessonId": "g-fr-articles"
+  }
+]

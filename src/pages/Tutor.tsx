@@ -18,7 +18,7 @@ const TURNS_TO_COMPLETE = 3;
 
 /**
  * Structured role-play with Claude (optional). Not open chat: each scenario has a goal and a
- * register (tu / Lei), and corrections are shown as a prompt first so the learner self-corrects.
+ * register (informal or formal, e.g. tu / Lei), and corrections are shown as a prompt first so the learner self-corrects.
  */
 export function Tutor() {
   const { pack, progress } = useApp();
@@ -48,7 +48,7 @@ export function Tutor() {
               <p className="row-title">{s.title}</p>
               <p className="small">{s.goal}</p>
               <p className="muted small">
-                {s.level} · <span className={`register-${s.register.toLowerCase()}`}>{s.register === 'tu' ? 'informal (tu)' : 'formal (Lei)'}</span>
+                {s.level} · <span className={`register-${s.register}`}>{`${s.register} (${pack.meta.registers[s.register].label})`}</span>
                 {progress.scenariosDone[s.id] ? ' · practised' : ''}
               </p>
             </div>
@@ -100,7 +100,7 @@ function Conversation({ scenario, onExit }: { scenario: Scenario; onExit: () => 
       const turn = await callTutor({
         apiKey: progress.settings.apiKey,
         model: progress.settings.model,
-        system: buildSystemPrompt(scenario, pack.meta.name),
+        system: buildSystemPrompt(scenario, pack.meta),
         messages: toApi(withUser),
         signal: controller.signal,
       });
@@ -142,7 +142,7 @@ function Conversation({ scenario, onExit }: { scenario: Scenario; onExit: () => 
         <h1>{scenario.title}</h1>
         <p className="lede">{scenario.goal}</p>
         <p className="muted small">
-          {scenario.level} · {scenario.register === 'tu' ? 'use tu (informal)' : 'use Lei (formal)'}
+          {scenario.level} · use {pack.meta.registers[scenario.register].label} ({scenario.register})
           {scenario.focus ? ` · ${scenario.focus}` : ''}
         </p>
       </header>

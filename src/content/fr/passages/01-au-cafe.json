@@ -1,0 +1,147 @@
+{
+  "id": "p-fr-au-cafe",
+  "level": "A1",
+  "title": "Au café",
+  "summary": "Marie orders breakfast at a café.",
+  "sentences": [
+    {
+      "l2": "Marie entre dans un café.",
+      "en": "Marie walks into a café."
+    },
+    {
+      "l2": "Le serveur dit : « Bonjour, madame ! »",
+      "en": "The waiter says: 'Good morning, madam!'"
+    },
+    {
+      "l2": "« Un café et un croissant, s'il vous plaît. »",
+      "en": "'A coffee and a croissant, please.'"
+    },
+    {
+      "l2": "Le croissant est chaud et très bon.",
+      "en": "The croissant is warm and very good."
+    },
+    {
+      "l2": "Marie paie et dit : « Merci, au revoir ! »",
+      "en": "Marie pays and says: 'Thank you, goodbye!'"
+    }
+  ],
+  "gloss": {
+    "marie": {
+      "lemma": "Marie",
+      "en": "Marie (name)",
+      "proper": true
+    },
+    "entre": {
+      "lemma": "entrer",
+      "en": "walks in, enters"
+    },
+    "dans": {
+      "lemma": "dans",
+      "en": "in, into"
+    },
+    "un": {
+      "lemma": "un",
+      "en": "a, an"
+    },
+    "café": {
+      "lemma": "café",
+      "en": "café; coffee"
+    },
+    "le": {
+      "lemma": "le",
+      "en": "the"
+    },
+    "serveur": {
+      "lemma": "serveur",
+      "en": "waiter"
+    },
+    "dit": {
+      "lemma": "dire",
+      "en": "says"
+    },
+    "bonjour": {
+      "lemma": "bonjour",
+      "en": "hello, good morning"
+    },
+    "madame": {
+      "lemma": "madame",
+      "en": "madam, Mrs"
+    },
+    "et": {
+      "lemma": "et",
+      "en": "and"
+    },
+    "croissant": {
+      "lemma": "croissant",
+      "en": "croissant"
+    },
+    "s'": {
+      "lemma": "si",
+      "en": "if (s'il vous plaît = please)"
+    },
+    "il": {
+      "lemma": "il",
+      "en": "it, he"
+    },
+    "vous": {
+      "lemma": "vous",
+      "en": "you (formal or plural)"
+    },
+    "plaît": {
+      "lemma": "plaire",
+      "en": "pleases"
+    },
+    "est": {
+      "lemma": "être",
+      "en": "is"
+    },
+    "chaud": {
+      "lemma": "chaud",
+      "en": "warm, hot"
+    },
+    "très": {
+      "lemma": "très",
+      "en": "very"
+    },
+    "bon": {
+      "lemma": "bon",
+      "en": "good"
+    },
+    "paie": {
+      "lemma": "payer",
+      "en": "pays"
+    },
+    "merci": {
+      "lemma": "merci",
+      "en": "thank you"
+    },
+    "au": {
+      "lemma": "au",
+      "en": "to the (au revoir = goodbye)"
+    },
+    "revoir": {
+      "lemma": "revoir",
+      "en": "see again (au revoir = goodbye)"
+    }
+  },
+  "questions": [
+    {
+      "q": "Where is Marie?",
+      "options": ["At a café", "At the station", "At home"],
+      "answerIndex": 0,
+      "explanation": "Marie entre dans un café: Marie walks into a café."
+    },
+    {
+      "q": "What does she order?",
+      "options": ["A coffee and a croissant", "A tea and a cake", "Only a coffee"],
+      "answerIndex": 0,
+      "explanation": "« Un café et un croissant, s’il vous plaît. »"
+    },
+    {
+      "q": "How is the croissant?",
+      "options": ["Warm and very good", "Cold", "Too sweet"],
+      "answerIndex": 0,
+      "explanation": "Le croissant est chaud et très bon."
+    }
+  ]
+}

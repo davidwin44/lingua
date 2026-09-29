@@ -38,8 +38,8 @@ export function Pronounce() {
       {!ttsSupported() ? <p className="muted small">Audio playback isn’t available in this browser.</p> : null}
 
       <section className="section" aria-labelledby="pairs-title">
-        <h2 id="pairs-title">Double consonants</h2>
-        <p className="muted">A double consonant is held longer, and it changes the meaning.</p>
+        <h2 id="pairs-title">Minimal pairs</h2>
+        <p className="muted">Two words that differ in one sound, and the sound changes the meaning.</p>
         <ul className="plain-list-block">
           {pairs.map((item) => (
             <li key={item.id} className="pron-item">

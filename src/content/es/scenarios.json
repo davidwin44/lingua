@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sc-es-bar",
+    "title": "At a bar with a friend",
+    "register": "informal",
+    "level": "A1",
+    "goal": "Order a drink and something to eat, ask your friend what they want, and pay at the end.",
+    "role": "Your friend Pablo, meeting you at a bar in Madrid. Relaxed and friendly; uses tú.",
+    "opening": "¡Hola! ¡Por fin! Bueno, ¿qué quieres tomar?",
+    "openingEn": "Hi! At last! So, what do you want to have?",
+    "focus": "tú forms (quieres, tomas) and ordering with 'quiero' / 'me pones'"
+  },
+  {
+    "id": "sc-es-hotel",
+    "title": "Checking into a hotel",
+    "register": "formal",
+    "level": "A1",
+    "goal": "Give your name, say how many nights you are staying, and ask what time breakfast is.",
+    "role": "The receptionist at a small hotel in Seville. Polite and patient; uses usted.",
+    "opening": "Buenas tardes. ¿En qué puedo ayudarle?",
+    "openingEn": "Good afternoon. How can I help you?",
+    "focus": "usted forms and polite requests with 'quería' / 'quisiera'"
+  }
+]

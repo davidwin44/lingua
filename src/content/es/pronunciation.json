@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pn-es-pero-perro",
+    "kind": "pair",
+    "title": "pero / perro",
+    "sound": "r and rr",
+    "words": [
+      {
+        "text": "pero",
+        "en": "but"
+      },
+      {
+        "text": "perro",
+        "en": "dog"
+      }
+    ],
+    "tip": "A single r between vowels is one quick tap of the tongue; rr is a rolled trill."
+  },
+  {
+    "id": "pn-es-una-una",
+    "kind": "pair",
+    "title": "una / uña",
+    "sound": "ñ",
+    "words": [
+      {
+        "text": "una",
+        "en": "a, one"
+      },
+      {
+        "text": "uña",
+        "en": "nail"
+      }
+    ],
+    "tip": "ñ is one sound, like the “ny” in canyon."
+  },
+  {
+    "id": "pn-es-j",
+    "kind": "sound",
+    "title": "The Spanish j",
+    "sound": "j",
+    "words": [
+      {
+        "text": "jamón",
+        "en": "ham"
+      },
+      {
+        "text": "ajo",
+        "en": "garlic"
+      },
+      {
+        "text": "hijo",
+        "en": "son"
+      }
+    ],
+    "tip": "Breathe the j out from the back of the throat, like a strong English h."
+  }
+]

@@ -22,9 +22,9 @@ import { GOAL_LABELS } from './Onboarding';
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 
-function greeting(now: number): string {
+function greeting(now: number, g: { morning: string; afternoon: string; evening: string }): string {
   const h = new Date(now).getHours();
-  return h >= 5 && h < 13 ? 'Buongiorno' : h >= 13 && h < 18 ? 'Buon pomeriggio' : 'Buonasera';
+  return h >= 5 && h < 13 ? g.morning : h >= 13 && h < 18 ? g.afternoon : g.evening;
 }
 
 /** One measured quantity with its bar; `target` draws a tick where the bar should reach. */
@@ -80,11 +80,16 @@ export function Dashboard() {
     <div className="page page-wide dashboard">
       <header className="page-head">
         <div>
-          <h1 lang="it">{greeting(now)}</h1>
+          <h1 lang={pack.meta.ttsLang}>{greeting(now, pack.meta.greetings)}</h1>
           <p className="muted">
             Goal: {goal ? GOAL_LABELS[goal.reason].title.toLowerCase() : 'learning'}. {weekly.minutes} min and {weekly.sessions} session
             {weekly.sessions === 1 ? '' : 's'} this week{weeks > 1 ? `, ${weeks} weeks of study so far` : ''}.
           </p>
+          {pack.meta.status === 'preview' ? (
+            <p className="muted small">
+              {pack.meta.name} is a preview: a first lesson, passage and word list while the full course is written.
+            </p>
+          ) : null}
         </div>
       </header>
 

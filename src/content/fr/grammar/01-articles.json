@@ -1,0 +1,118 @@
+{
+  "id": "g-fr-articles",
+  "order": 1,
+  "title": "Nouns, gender and articles",
+  "level": "A1",
+  "explanation": "Every French noun is **masculine** or **feminine**, and the article tells you which. Learn each noun with its article.\n\n- **le** before a masculine noun: *le livre* (the book)\n- **la** before a feminine noun: *la table* (the table)\n- **l'** before a vowel or a silent h, for either gender: *l'ami*, *l'heure*\n- **les** for every plural: *les livres*, *les tables*\n\nFor *a* or *an*, use **un** with masculine nouns and **une** with feminine ones: *un livre*, *une table*. In the plural both become **des**: *des livres*.\n\nEndings help but are not a rule: many nouns in *-tion* and *-té* are feminine, and many in *-ment* are masculine.",
+  "table": {
+    "headers": ["", "masculine", "feminine"],
+    "rows": [
+      ["the", "le / l'", "la / l'"],
+      ["the (plural)", "les", "les"],
+      ["a, an", "un", "une"],
+      ["some (plural)", "des", "des"]
+    ]
+  },
+  "examples": [
+    {
+      "l2": "Le livre est sur la table.",
+      "en": "The book is on the table."
+    },
+    {
+      "l2": "L'ami de Paul habite à Lyon.",
+      "en": "Paul's friend lives in Lyon."
+    },
+    {
+      "l2": "J'ai une sœur et deux frères.",
+      "en": "I have a sister and two brothers."
+    }
+  ],
+  "drills": [
+    {
+      "id": "d-fr-art-01",
+      "type": "cloze",
+      "prompt": "Je lis ___ livre.",
+      "en": "I'm reading the book.",
+      "answer": ["le"],
+      "category": "def-article",
+      "hints": ["Is livre masculine or feminine?", "Livre is masculine and starts with a consonant."],
+      "explanation": "Livre is masculine, so it takes le: le livre."
+    },
+    {
+      "id": "d-fr-art-02",
+      "type": "cloze",
+      "prompt": "Où est ___ table ?",
+      "en": "Where is the table?",
+      "answer": ["la"],
+      "category": "def-article",
+      "hints": ["Is table masculine or feminine?", "Table is feminine and starts with a consonant."],
+      "explanation": "Table is feminine: la table."
+    },
+    {
+      "id": "d-fr-art-03",
+      "type": "cloze",
+      "prompt": "Je cherche ___ clés.",
+      "en": "I'm looking for the keys.",
+      "answer": ["les"],
+      "category": "def-article",
+      "hints": ["Is clés singular or plural?", "Every plural noun takes the same definite article, whatever its gender."],
+      "explanation": "Clés is plural, so the article is les."
+    },
+    {
+      "id": "d-fr-art-04",
+      "type": "cloze",
+      "prompt": "Il a ___ chat.",
+      "en": "He has a cat.",
+      "answer": ["un"],
+      "category": "indef-article",
+      "hints": [
+        "Is chat masculine or feminine?",
+        "Chat is masculine. Which word for \"a\" goes with masculine nouns?"
+      ],
+      "explanation": "Chat is masculine: un chat."
+    },
+    {
+      "id": "d-fr-art-05",
+      "type": "cloze",
+      "prompt": "Elle a ___ voiture.",
+      "en": "She has a car.",
+      "answer": ["une"],
+      "category": "indef-article",
+      "hints": [
+        "Is voiture masculine or feminine?",
+        "Voiture is feminine. Which word for \"a\" goes with feminine nouns?"
+      ],
+      "explanation": "Voiture is feminine: une voiture."
+    },
+    {
+      "id": "d-fr-art-06",
+      "type": "cloze",
+      "prompt": "Nous avons ___ enfants.",
+      "en": "We have children.",
+      "answer": ["des"],
+      "category": "indef-article",
+      "hints": ["Is enfants singular or plural?", "In the plural, un and une become the same word."],
+      "explanation": "In the plural, un and une become des: des enfants."
+    },
+    {
+      "id": "d-fr-art-07",
+      "type": "cloze",
+      "prompt": "Je prends ___ train de huit heures.",
+      "en": "I'm taking the eight o'clock train.",
+      "answer": ["le"],
+      "category": "def-article",
+      "hints": ["Is train masculine or feminine?", "Train is masculine and starts with a consonant."],
+      "explanation": "Train is masculine: le train."
+    },
+    {
+      "id": "d-fr-art-08",
+      "type": "cloze",
+      "prompt": "Tu connais ___ maison de Paul ?",
+      "en": "Do you know Paul's house?",
+      "answer": ["la"],
+      "category": "def-article",
+      "hints": ["Is maison masculine or feminine?", "Maison is feminine and starts with a consonant."],
+      "explanation": "Maison is feminine: la maison."
+    }
+  ]
+}

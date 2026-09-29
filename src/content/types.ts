@@ -12,9 +12,32 @@ export interface Bilingual {
   en: string;
 }
 
+/** How to address someone in one register, for the tutor and scenario labels. */
+export interface RegisterInfo {
+  /** The pronoun, e.g. "tu", "Lei", "vous", "usted". */
+  label: string;
+  /** A few characteristic forms, e.g. "scusi, può, sa". */
+  forms: string;
+}
+
 export interface LangMeta {
   code: string;
   name: string;
+  /**
+   * "full" is a complete course. "preview" is an early pack: it runs end to end but has
+   * only starter content, and the language picker says so.
+   */
+  status: 'full' | 'preview';
+  /** Home greeting by time of day, in the target language. */
+  greetings: { morning: string; afternoon: string; evening: string };
+  /** Informal and formal address; scenarios pick one. */
+  registers: { informal: RegisterInfo; formal: RegisterInfo };
+  /** Auxiliary verbs of the compound past; every verb's `auxiliary` is one of these. */
+  auxiliaries: string[];
+  /** Name of the compound past tense, e.g. "passato prossimo". */
+  pastTense: string;
+  /** An example self-correction prompt the tutor can model its own prompts on. */
+  tutorPromptExample: string;
   /** BCP-47 tag for speechSynthesis. */
   ttsLang: string;
   /** BCP-47 tag for SpeechRecognition. */
@@ -77,7 +100,8 @@ export interface Verb {
   translation: string;
   /** Extra accepted English meanings for recognition cards. */
   alsoAccept?: string[];
-  auxiliary: 'avere' | 'essere';
+  /** One of `meta.auxiliaries`. */
+  auxiliary: string;
   pastParticiple: string;
   present: Conjugation;
   imperfect: Conjugation;
@@ -175,7 +199,7 @@ export interface ProductionItem {
 export interface Scenario {
   id: string;
   title: string;
-  register: 'tu' | 'Lei';
+  register: 'informal' | 'formal';
   level: 'A1' | 'A2';
   goal: string;
   /** Role Claude plays. */

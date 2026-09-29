@@ -38,7 +38,7 @@ export function RecordButton({ target, label = 'Record', compact = false }: { ta
     handle.current = h;
     try {
       const alternatives = await h.promise;
-      setResult(scorePronunciation(target, alternatives));
+      setResult(scorePronunciation(target, alternatives, pack.meta.code));
       setStatus('done');
       update((p, now) => recordPronAttempt(p, now));
     } catch (e) {

@@ -1,0 +1,155 @@
+{
+  "id": "p-es-cafeteria",
+  "level": "A1",
+  "title": "En la cafetería",
+  "summary": "Lucía orders breakfast at a café.",
+  "sentences": [
+    {
+      "l2": "Lucía entra en una cafetería.",
+      "en": "Lucía walks into a café."
+    },
+    {
+      "l2": "El camarero dice: «¡Buenos días!»",
+      "en": "The waiter says: 'Good morning!'"
+    },
+    {
+      "l2": "«Un café con leche y una tostada, por favor.»",
+      "en": "'A white coffee and a piece of toast, please.'"
+    },
+    {
+      "l2": "La tostada está caliente y muy rica.",
+      "en": "The toast is warm and very tasty."
+    },
+    {
+      "l2": "Lucía paga y dice: «¡Gracias, adiós!»",
+      "en": "Lucía pays and says: 'Thanks, bye!'"
+    }
+  ],
+  "gloss": {
+    "lucía": {
+      "lemma": "Lucía",
+      "en": "Lucía (name)",
+      "proper": true
+    },
+    "entra": {
+      "lemma": "entrar",
+      "en": "walks in, enters"
+    },
+    "en": {
+      "lemma": "en",
+      "en": "in, into"
+    },
+    "una": {
+      "lemma": "un",
+      "en": "a, an"
+    },
+    "cafetería": {
+      "lemma": "cafetería",
+      "en": "café"
+    },
+    "el": {
+      "lemma": "el",
+      "en": "the"
+    },
+    "camarero": {
+      "lemma": "camarero",
+      "en": "waiter"
+    },
+    "dice": {
+      "lemma": "decir",
+      "en": "says"
+    },
+    "buenos": {
+      "lemma": "bueno",
+      "en": "good (buenos días = good morning)"
+    },
+    "días": {
+      "lemma": "día",
+      "en": "days (buenos días = good morning)"
+    },
+    "un": {
+      "lemma": "un",
+      "en": "a, an"
+    },
+    "café": {
+      "lemma": "café",
+      "en": "coffee"
+    },
+    "con": {
+      "lemma": "con",
+      "en": "with (café con leche = white coffee)"
+    },
+    "leche": {
+      "lemma": "leche",
+      "en": "milk"
+    },
+    "y": {
+      "lemma": "y",
+      "en": "and"
+    },
+    "tostada": {
+      "lemma": "tostada",
+      "en": "piece of toast"
+    },
+    "por": {
+      "lemma": "por",
+      "en": "for (por favor = please)"
+    },
+    "favor": {
+      "lemma": "favor",
+      "en": "favour (por favor = please)"
+    },
+    "la": {
+      "lemma": "el",
+      "en": "the"
+    },
+    "está": {
+      "lemma": "estar",
+      "en": "is"
+    },
+    "caliente": {
+      "lemma": "caliente",
+      "en": "warm, hot"
+    },
+    "muy": {
+      "lemma": "muy",
+      "en": "very"
+    },
+    "rica": {
+      "lemma": "rico",
+      "en": "tasty (of food)"
+    },
+    "paga": {
+      "lemma": "pagar",
+      "en": "pays"
+    },
+    "gracias": {
+      "lemma": "gracias",
+      "en": "thank you"
+    },
+    "adiós": {
+      "lemma": "adiós",
+      "en": "goodbye"
+    }
+  },
+  "questions": [
+    {
+      "q": "Where is Lucía?",
+      "options": ["At a café", "At the station", "At home"],
+      "answerIndex": 0,
+      "explanation": "Lucía entra en una cafetería: Lucía walks into a café."
+    },
+    {
+      "q": "What does she order?",
+      "options": ["A white coffee and toast", "A tea and a cake", "Only a coffee"],
+      "answerIndex": 0,
+      "explanation": "«Un café con leche y una tostada, por favor.»"
+    },
+    {
+      "q": "How is the toast?",
+      "options": ["Warm and very tasty", "Cold", "Burnt"],
+      "answerIndex": 0,
+      "explanation": "La tostada está caliente y muy rica."
+    }
+  ]
+}

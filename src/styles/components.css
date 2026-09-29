@@ -1370,6 +1370,102 @@ input[type='range'] {
   font-weight: 500;
 }
 
+/* ---------- Language picker ----------
+ * A dropdown that looks like a form field; its list floats, so it is the one other thing
+ * (besides the word popover) that casts a shadow. */
+.flag {
+  display: block;
+  flex-shrink: 0;
+  color: var(--ink);
+}
+.lang-picker {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  max-width: 30rem;
+}
+.lang-picker-label {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+.lang-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: var(--tap);
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.lang-picker-trigger:hover {
+  border-color: var(--ink);
+}
+.lang-picker-trigger[aria-expanded='true'] {
+  border-color: var(--primary);
+}
+.lang-picker-value {
+  font-weight: 600;
+}
+.lang-picker-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.lang-picker-trigger > .icon:last-child {
+  margin-left: auto;
+  color: var(--muted);
+  transform: rotate(90deg);
+}
+.lang-picker-trigger[aria-expanded='true'] > .icon:last-child {
+  transform: rotate(-90deg);
+}
+.lang-picker-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  max-height: 20rem;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+.lang-option.is-active {
+  background: var(--sunk);
+}
+.lang-option-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.lang-option-name {
+  font-weight: 600;
+}
+.lang-option[aria-selected='true'] .lang-option-name,
+.lang-option > .icon:last-child {
+  color: var(--primary);
+}
+.lang-option-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* ---------- Onboarding ---------- */
 .onboarding {
   min-height: 100vh;

@@ -2,6 +2,11 @@
   "code": "es",
   "name": "Spanish",
   "status": "preview",
+  "flag": {
+    "stripes": "horizontal",
+    "colors": ["#AA151B", "#F1BF00", "#AA151B"],
+    "weights": [1, 2, 1]
+  },
   "greetings": {
     "morning": "Buenos días",
     "afternoon": "Buenas tardes",

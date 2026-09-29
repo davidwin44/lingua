@@ -2,6 +2,10 @@
   "code": "it",
   "name": "Italian",
   "status": "full",
+  "flag": {
+    "stripes": "vertical",
+    "colors": ["#009246", "#FFFFFF", "#CE2B37"]
+  },
   "greetings": {
     "morning": "Buongiorno",
     "afternoon": "Buon pomeriggio",

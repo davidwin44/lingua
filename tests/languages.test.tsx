@@ -98,6 +98,38 @@ describe('language-aware tutor and pronunciation', () => {
   });
 });
 
+describe('language dropdown', () => {
+  it('opens with the keyboard, shows every language, and closes on Escape', async () => {
+    const user = userEvent.setup();
+    render(
+      <AppProvider storage={new MemoryStorage()}>
+        <MemoryRouter initialEntries={['/welcome']}>
+          <App />
+        </MemoryRouter>
+      </AppProvider>,
+    );
+    const combo = screen.getByRole('combobox', { name: /Language/ });
+    expect(combo).toHaveAttribute('aria-expanded', 'false');
+    combo.focus();
+    await user.keyboard('{ArrowDown}');
+    expect(combo).toHaveAttribute('aria-expanded', 'true');
+    const options = screen.getAllByRole('option');
+    expect(options.map((o) => o.textContent)).toEqual([
+      expect.stringContaining('Italian'),
+      expect.stringContaining('French'),
+      expect.stringContaining('Spanish'),
+    ]);
+    expect(options[0]).toHaveAttribute('aria-selected', 'true');
+    await user.keyboard('{ArrowDown}{ArrowDown}');
+    expect(combo).toHaveAttribute('aria-activedescendant', options[2].id);
+    await user.keyboard('{Escape}');
+    expect(combo).toHaveAttribute('aria-expanded', 'false');
+    expect(combo).toHaveTextContent('Italian');
+    await user.keyboard('{ArrowDown}{End}{Enter}');
+    expect(screen.getByRole('combobox', { name: /Language/ })).toHaveTextContent('Spanish');
+  });
+});
+
 describe('switching language', () => {
   it('opens French from Settings with its own onboarding, and Italian progress is still there after', async () => {
     const user = userEvent.setup();
@@ -112,16 +144,18 @@ describe('switching language', () => {
       </AppProvider>,
     );
 
-    await user.click(screen.getByRole('radio', { name: /French/ }));
+    await user.click(screen.getByRole('combobox', { name: /Language/ }));
+    await user.click(screen.getByRole('option', { name: /French/ }));
     // A language with no progress starts at onboarding, with French selected.
     expect(await screen.findByRole('heading', { name: 'What do you want to learn?' })).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: /French/ })).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('combobox', { name: /Language/ })).toHaveTextContent('French');
     await user.click(screen.getByRole('button', { name: 'Next' }));
     expect(screen.getByRole('heading', { name: 'Why are you learning French?' })).toBeInTheDocument();
 
     // Back to Italian: its goal was never touched, so Home opens straight away.
     await user.click(screen.getByRole('button', { name: 'Back' }));
-    await user.click(screen.getByRole('radio', { name: /Italian/ }));
+    await user.click(screen.getByRole('combobox', { name: /Language/ }));
+    await user.click(screen.getByRole('option', { name: /Italian/ }));
     expect(await screen.findByText(/Goal: travel/)).toBeInTheDocument();
     expect(loadProgress(storage, Date.now(), 'it').goal?.reason).toBe('travel');
   });

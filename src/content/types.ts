@@ -28,6 +28,11 @@ export interface LangMeta {
    * only starter content, and the language picker says so.
    */
   status: 'full' | 'preview';
+  /**
+   * A striped flag drawn in the language picker: equal stripes unless `weights` says
+   * otherwise (Spain's is 1:2:1).
+   */
+  flag: { stripes: 'vertical' | 'horizontal'; colors: string[]; weights?: number[] };
   /** Home greeting by time of day, in the target language. */
   greetings: { morning: string; afternoon: string; evening: string };
   /** Informal and formal address; scenarios pick one. */

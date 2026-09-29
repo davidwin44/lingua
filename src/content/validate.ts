@@ -14,6 +14,8 @@ export function validatePack(pack: LanguagePack): string[] {
   if (!meta.registers?.informal?.label || !meta.registers?.formal?.label) errors.push('Meta: needs informal and formal registers');
   if (!meta.auxiliaries?.length) errors.push('Meta: needs at least one auxiliary');
   if (!meta.pastTense) errors.push('Meta: needs the name of the compound past');
+  if (!meta.flag?.colors?.length) errors.push('Meta: needs flag colours');
+  else if (meta.flag.weights && meta.flag.weights.length !== meta.flag.colors.length) errors.push('Meta: flag weights must match its colours');
   const claim = (id: string, where: string) => {
     if (!id) errors.push(`${where}: missing id`);
     else if (seen.has(id)) errors.push(`Duplicate id "${id}" (${where} and ${seen.get(id)})`);

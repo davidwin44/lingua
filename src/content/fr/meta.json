@@ -2,6 +2,10 @@
   "code": "fr",
   "name": "French",
   "status": "preview",
+  "flag": {
+    "stripes": "vertical",
+    "colors": ["#0055A4", "#FFFFFF", "#EF4135"]
+  },
   "greetings": {
     "morning": "Bonjour",
     "afternoon": "Bonjour",

@@ -1,6 +1,6 @@
 # Lingua: evidence-based language learning
 
-> **Status: alpha (0.1.0-alpha.2).** Everything described below works, but expect rough edges and changes to the progress format. Export a backup from Settings before updating.
+> **Status: alpha (0.1.0-alpha.3).** Everything described below works, but expect rough edges and changes to the progress format. Export a backup from Settings before updating.
 
 A local-first web app for learning a language, built on what the research says works: spaced retrieval with feedback, frequency-ordered vocabulary, short explicit grammar with prompt-first correction, graded reading at the right level, and speaking and writing practice with explicit feedback. It ships with an Italian pack (A1 to A2) and is designed so that other languages can be added as data.
 

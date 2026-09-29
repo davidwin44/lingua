@@ -1,7 +1,7 @@
 {
   "name": "lingua",
   "private": true,
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "license": "UNLICENSED",
   "author": "davidwin44",
   "description": "Evidence-based language learning (Italian seed pack): FSRS-6 spaced retrieval, prompt-first grammar feedback, graded input, output practice.",

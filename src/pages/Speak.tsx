@@ -3,6 +3,7 @@ import { useApp } from '../state/AppContext';
 import { useNow } from '../state/hooks';
 import { pronSessionsThisWeek } from '../lib/progress';
 import { srSupported } from '../lib/speech';
+import { Icon } from '../components/Icon';
 
 /**
  * Output practice hub. Principle 9: speaking and writing with explicit feedback is where
@@ -15,36 +16,53 @@ export function Speak() {
   const hasKey = Boolean(progress.settings.apiKey.trim());
 
   return (
-    <div className="page">
-      <h1>Speaking and writing</h1>
-      <ul className="index-list">
+    <div className="page page-wide">
+      <header className="page-head">
+        <div>
+          <h1>Speaking and writing</h1>
+          <p className="muted">Every activity here gives feedback you can act on. Pronunciation never changes your review grades.</p>
+        </div>
+      </header>
+      <ul className="card-list">
         <li>
-          <Link to="/produce" className="row-link">
-            <div className="row-main">
-              <p className="row-title">Sentence building</p>
-              <p className="muted small">Put short English sentences into {pack.meta.name}. Works offline.</p>
-            </div>
-            <span className="row-meta">
+          <Link to="/produce" className="card-row">
+            <span className="icon-tile" aria-hidden="true">
+              <Icon name="pen" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">Sentence building</span>
+              <span className="card-row-sub">Put short English sentences into {pack.meta.name}. Works offline.</span>
+            </span>
+            <span className="badge">
               {done}/{pack.production.length}
             </span>
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
         <li>
-          <Link to="/tutor" className="row-link">
-            <div className="row-main">
-              <p className="row-title">Role-play</p>
-              <p className="muted small">A café, a hotel, asking the way. With corrections from Claude.</p>
-            </div>
-            <span className="row-meta">{hasKey ? '' : 'needs API key'}</span>
+          <Link to="/tutor" className="card-row">
+            <span className="icon-tile" aria-hidden="true">
+              <Icon name="speak" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">Role-play</span>
+              <span className="card-row-sub">A café, a hotel, asking the way. With corrections from Claude.</span>
+            </span>
+            {hasKey ? null : <span className="badge">needs API key</span>}
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
         <li>
-          <Link to="/pronounce" className="row-link">
-            <div className="row-main">
-              <p className="row-title">Pronunciation</p>
-              <p className="muted small">Minimal pairs and difficult sounds.</p>
-            </div>
-            <span className="row-meta">{srSupported() ? `${pronSessionsThisWeek(progress, now)} this week` : 'Chrome or Edge'}</span>
+          <Link to="/pronounce" className="card-row">
+            <span className="icon-tile" aria-hidden="true">
+              <Icon name="mic" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">Pronunciation</span>
+              <span className="card-row-sub">Minimal pairs and difficult sounds.</span>
+            </span>
+            <span className="badge">{srSupported() ? `${pronSessionsThisWeek(progress, now)} this week` : 'Chrome or Edge'}</span>
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
       </ul>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../state/AppContext';
 import { useNow } from '../state/hooks';
 import { buildReviewQueue, nextNewCards } from '../lib/scheduler';
+import { Icon } from '../components/Icon';
 
 export function Study() {
   const { lexicon, progress } = useApp();
@@ -11,33 +12,52 @@ export function Study() {
   const deckSize = Object.values(progress.cards).filter((c) => c.state !== 'new').length;
 
   return (
-    <div className="page">
-      <h1>Study</h1>
-      <ul className="index-list">
+    <div className="page page-wide">
+      <header className="page-head">
+        <div>
+          <h1>Study</h1>
+          <p className="muted">Type what you remember. The answer always follows, and the scheduler decides when each card comes back.</p>
+        </div>
+      </header>
+      <ul className="card-list">
         <li>
-          <Link to="/review" className="row-link">
-            <div className="row-main">
-              <p className="row-title">Review</p>
-              <p className="muted small">Cards the scheduler has brought back, in random order.</p>
-            </div>
-            <span className="row-meta">{queue.ids.length > 0 ? `${queue.ids.length} due` : 'none due'}</span>
+          <Link to="/review" className="card-row">
+            <span className="icon-tile" aria-hidden="true">
+              <Icon name="cards" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">Review</span>
+              <span className="card-row-sub">Cards the scheduler has brought back, in random order.</span>
+            </span>
+            <span className={`badge ${queue.ids.length > 0 ? 'badge-primary' : ''}`}>
+              {queue.ids.length > 0 ? `${queue.ids.length} due` : 'none due'}
+            </span>
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
         <li>
-          <Link to="/learn" className="row-link">
-            <div className="row-main">
-              <p className="row-title">New words</p>
-              <p className="muted small">The next most common words.</p>
-            </div>
-            <span className="row-meta">{newIds.length > 0 ? `${newIds.length} ready` : 'done for today'}</span>
+          <Link to="/learn" className="card-row">
+            <span className="icon-tile icon-tile-warm" aria-hidden="true">
+              <Icon name="sparkle" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">New words</span>
+              <span className="card-row-sub">The next most common words.</span>
+            </span>
+            <span className={`badge ${newIds.length > 0 ? 'badge-warm' : ''}`}>{newIds.length > 0 ? `${newIds.length} ready` : 'done for today'}</span>
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
         <li>
-          <Link to="/grammar" className="row-link">
-            <div className="row-main">
-              <p className="row-title">Grammar</p>
-              <p className="muted small">Short lessons and mixed practice.</p>
-            </div>
+          <Link to="/grammar" className="card-row">
+            <span className="icon-tile" aria-hidden="true">
+              <Icon name="grammar" size={18} />
+            </span>
+            <span className="card-row-main">
+              <span className="card-row-title">Grammar</span>
+              <span className="card-row-sub">Short lessons and mixed practice.</span>
+            </span>
+            <Icon name="chevron" size={18} />
           </Link>
         </li>
       </ul>

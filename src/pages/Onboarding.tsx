@@ -37,7 +37,20 @@ export function Onboarding() {
   return (
     <main className="onboarding">
       <div className="onboarding-inner">
-        <p className="brand-name">Lingua</p>
+        <header className="onboarding-head">
+          <p className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              L
+            </span>
+            <span className="brand-name">Lingua</span>
+          </p>
+          <p className="onboarding-step">Step {step + 1} of 3</p>
+        </header>
+        <div className="onboarding-steps" aria-hidden="true">
+          {[0, 1, 2].map((i) => (
+            <span key={i} className={i <= step ? 'is-on' : ''} />
+          ))}
+        </div>
 
         {step === 0 ? (
           <section aria-labelledby="ob-goal">

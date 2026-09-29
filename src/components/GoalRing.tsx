@@ -11,14 +11,17 @@ export function GoalRing({ fraction, value, target, unit }: { fraction: number; 
       aria-label={`${value} of ${target} ${unit} this week`}
     >
       <circle cx="50" cy="50" r={r} className="ring-track" />
-      <circle
-        cx="50"
-        cy="50"
-        r={r}
-        className="ring-fill"
-        strokeDasharray={`${c * f} ${c}`}
-        transform="rotate(-90 50 50)"
-      />
+      {/* No arc at zero: a round cap on an empty arc would still draw a dot. */}
+      {f > 0 ? (
+        <circle
+          cx="50"
+          cy="50"
+          r={r}
+          className="ring-fill"
+          strokeDasharray={`${c * f} ${c}`}
+          transform="rotate(-90 50 50)"
+        />
+      ) : null}
       <text x="50" y="49" textAnchor="middle" className="ring-value">
         {value}
       </text>

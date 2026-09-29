@@ -20,20 +20,17 @@ export function Speak() {
       <header className="page-head">
         <div>
           <h1>Speaking and writing</h1>
-          <p className="muted">Every activity here gives feedback you can act on. Pronunciation never changes your review grades.</p>
+          <p className="muted">Put {pack.meta.name} to use, with corrections as you go. Pronunciation checks never change your review grades.</p>
         </div>
       </header>
       <ul className="card-list">
         <li>
           <Link to="/produce" className="card-row">
-            <span className="icon-tile" aria-hidden="true">
-              <Icon name="pen" size={18} />
-            </span>
             <span className="card-row-main">
               <span className="card-row-title">Sentence building</span>
               <span className="card-row-sub">Put short English sentences into {pack.meta.name}. Works offline.</span>
             </span>
-            <span className="badge">
+            <span className="row-state">
               {done}/{pack.production.length}
             </span>
             <Icon name="chevron" size={18} />
@@ -41,27 +38,21 @@ export function Speak() {
         </li>
         <li>
           <Link to="/tutor" className="card-row">
-            <span className="icon-tile" aria-hidden="true">
-              <Icon name="speak" size={18} />
-            </span>
             <span className="card-row-main">
               <span className="card-row-title">Role-play</span>
               <span className="card-row-sub">A café, a hotel, asking the way. With corrections from Claude.</span>
             </span>
-            {hasKey ? null : <span className="badge">needs API key</span>}
+            {hasKey ? null : <span className="row-state">needs API key</span>}
             <Icon name="chevron" size={18} />
           </Link>
         </li>
         <li>
           <Link to="/pronounce" className="card-row">
-            <span className="icon-tile" aria-hidden="true">
-              <Icon name="mic" size={18} />
-            </span>
             <span className="card-row-main">
               <span className="card-row-title">Pronunciation</span>
               <span className="card-row-sub">Minimal pairs and difficult sounds.</span>
             </span>
-            <span className="badge">{srSupported() ? `${pronSessionsThisWeek(progress, now)} this week` : 'Chrome or Edge'}</span>
+            <span className="row-state">{srSupported() ? `${pronSessionsThisWeek(progress, now)} this week` : 'Chrome or Edge'}</span>
             <Icon name="chevron" size={18} />
           </Link>
         </li>

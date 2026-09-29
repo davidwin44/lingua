@@ -4,7 +4,7 @@ import { useApp } from '../state/AppContext';
 import { useNow } from '../state/hooks';
 import { GoalRing } from '../components/GoalRing';
 import { ForecastChart } from '../components/ForecastChart';
-import { Icon, type IconName } from '../components/Icon';
+import { Icon } from '../components/Icon';
 import { passageCoverage } from '../lib/coverage';
 import {
   activeWeeks,
@@ -20,33 +20,15 @@ import { buildReviewQueue, dueReviews, forecast, nextNewCards } from '../lib/sch
 import { GOAL_LABELS } from './Onboarding';
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
+const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 
 function greeting(now: number): string {
   const h = new Date(now).getHours();
   return h >= 5 && h < 13 ? 'Buongiorno' : h >= 13 && h < 18 ? 'Buon pomeriggio' : 'Buonasera';
 }
 
-function Stat({ icon, label, value, sub, fraction }: { icon: IconName; label: string; value: ReactNode; sub: ReactNode; fraction?: number }) {
-  return (
-    <div className="stat-card">
-      <dt>
-        <span className="icon-tile" aria-hidden="true">
-          <Icon name={icon} size={18} />
-        </span>
-        {label}
-      </dt>
-      <dd className="stat-value">{value}</dd>
-      <dd className="stat-sub">{sub}</dd>
-      {fraction !== undefined ? (
-        <dd className="meter" aria-hidden="true">
-          <span style={{ width: `${Math.round(Math.max(0, Math.min(1, fraction)) * 100)}%` }} />
-        </dd>
-      ) : null}
-    </div>
-  );
-}
-
-function Bar({ label, value, of, fraction }: { label: string; value: ReactNode; of?: ReactNode; fraction: number }) {
+/** One measured quantity with its bar; `target` draws a tick where the bar should reach. */
+function Bar({ label, value, of, fraction, target }: { label: string; value: ReactNode; of?: ReactNode; fraction: number; target?: number }) {
   return (
     <li className="bar-row">
       <span className="bar-row-label">{label}</span>
@@ -55,7 +37,8 @@ function Bar({ label, value, of, fraction }: { label: string; value: ReactNode; 
         {of ? <span className="muted"> {of}</span> : null}
       </span>
       <span className="meter" aria-hidden="true">
-        <span style={{ width: `${Math.round(Math.max(0, Math.min(1, fraction)) * 100)}%` }} />
+        <span style={{ width: `${Math.round(clamp01(fraction) * 100)}%` }} />
+        {target !== undefined ? <i className="meter-target" style={{ left: `${Math.round(clamp01(target) * 100)}%` }} /> : null}
       </span>
     </li>
   );
@@ -97,7 +80,6 @@ export function Dashboard() {
     <div className="page page-wide dashboard">
       <header className="page-head">
         <div>
-          <p className="eyebrow">{pack.meta.name} · Home</p>
           <h1 lang="it">{greeting(now)}</h1>
           <p className="muted">
             Goal: {goal ? GOAL_LABELS[goal.reason].title.toLowerCase() : 'learning'}. {weekly.minutes} min and {weekly.sessions} session
@@ -108,62 +90,45 @@ export function Dashboard() {
 
       {welcome ? (
         <section className="alert-card" aria-labelledby="wb-title">
-          <span className="icon-tile icon-tile-warm" aria-hidden="true">
-            <Icon name="sparkle" size={18} />
-          </span>
-          <div className="alert-card-body">
-            <h2 id="wb-title" className="h3">
-              Welcome back.
-            </h2>
-            <p>A short catch-up: the {Math.min(20, overdue)} most overdue cards. Anything else is spread over the coming days.</p>
-            <div className="row-wrap">
-              <Link to="/review?mode=catchup" className="btn btn-primary">
-                Start the 20-card catch-up
-              </Link>
-              <button type="button" className="btn btn-link" onClick={() => update((p, t) => ({ ...p, welcomeBackDismissedAt: t }))}>
-                Not now
-              </button>
-            </div>
+          <h2 id="wb-title" className="h3">
+            Welcome back.
+          </h2>
+          <p>
+            {overdue > 0
+              ? `A short catch-up: the ${Math.min(20, overdue)} most overdue card${Math.min(20, overdue) === 1 ? '' : 's'}. Anything else is spread over the coming days.`
+              : 'Nothing has piled up while you were away, so a short catch-up is all it takes to get going again.'}
+          </p>
+          <div className="row-wrap">
+            <Link to="/review?mode=catchup" className="btn btn-primary">
+              Start the 20-card catch-up
+            </Link>
+            <button type="button" className="btn btn-link" onClick={() => update((p, t) => ({ ...p, welcomeBackDismissedAt: t }))}>
+              Not now
+            </button>
           </div>
         </section>
       ) : null}
 
-      <dl className="stat-grid" aria-label="At a glance">
-        <Stat icon="cards" label="Reviews due" value={due} sub={queue.heldBack > 0 ? `${queue.heldBack} more spread over the next days` : 'in random order'} />
-        <Stat icon="sparkle" label="New words" value={newAvailable} sub={newAvailable > 0 ? 'ready today, most common first' : 'done for today'} />
-        <Stat
-          icon="layers"
-          label="Words known"
-          value={known.length}
-          sub={`of ${lexicon.length} in the course`}
-          fraction={lexicon.length ? known.length / lexicon.length : 0}
-        />
-        <Stat
-          icon="target"
-          label="Recall, 30 days"
-          value={retention.rate == null ? '–' : pct(retention.rate)}
-          sub={retention.rate == null ? 'no reviews yet' : `target ${pct(target)}`}
-        />
-      </dl>
-
       <div className="widget-grid">
         <section className="widget widget-span-2" aria-labelledby="today-title">
-          <div className="widget-head">
-            <h2 id="today-title">Today</h2>
-            <p className="muted small">Suggested next steps, in order.</p>
+          <h2 id="today-title">Today</h2>
+          <div className="today-figures">
+            <p>
+              <span className="figure-num">{due}</span>
+              <span className="figure-label">review{due === 1 ? '' : 's'} due</span>
+            </p>
+            <p>
+              <span className="figure-num">{newAvailable}</span>
+              <span className="figure-label">new word{newAvailable === 1 ? '' : 's'}</span>
+            </p>
           </div>
           <ul className="action-list">
             {due > 0 ? (
               <li>
                 <Link to="/review" className="action-row">
-                  <span className="icon-tile" aria-hidden="true">
-                    <Icon name="cards" size={18} />
-                  </span>
                   <span className="action-main">
                     <span className="action-title">Review</span>
-                    <span className="action-sub">
-                      {due} card{due === 1 ? '' : 's'} the scheduler has brought back
-                    </span>
+                    <span className="action-sub">Cards the scheduler has brought back, in random order</span>
                   </span>
                   <Icon name="chevron" size={18} />
                 </Link>
@@ -172,9 +137,6 @@ export function Dashboard() {
             {newAvailable > 0 ? (
               <li>
                 <Link to="/learn" className="action-row">
-                  <span className="icon-tile icon-tile-warm" aria-hidden="true">
-                    <Icon name="sparkle" size={18} />
-                  </span>
                   <span className="action-main">
                     <span className="action-title">
                       Learn {newAvailable} new word{newAvailable === 1 ? '' : 's'}
@@ -188,13 +150,10 @@ export function Dashboard() {
             {nextLesson ? (
               <li>
                 <Link to={`/grammar/${nextLesson.id}`} className="action-row">
-                  <span className="icon-tile" aria-hidden="true">
-                    <Icon name="grammar" size={18} />
-                  </span>
                   <span className="action-main">
                     <span className="action-title">Grammar: {nextLesson.title}</span>
                     <span className="action-sub">
-                      Lesson {nextLesson.order} · {nextLesson.level}
+                      Lesson {nextLesson.order}, {nextLesson.level}
                     </span>
                   </span>
                   <Icon name="chevron" size={18} />
@@ -204,15 +163,12 @@ export function Dashboard() {
             {nextPassage ? (
               <li>
                 <Link to={`/library/${nextPassage.p.id}`} className="action-row">
-                  <span className="icon-tile" aria-hidden="true">
-                    <Icon name="book" size={18} />
-                  </span>
                   <span className="action-main">
                     <span className="action-title">
                       Read: <span lang={pack.meta.ttsLang}>{nextPassage.p.title}</span>
                     </span>
                     <span className="action-sub">
-                      {nextPassage.p.level} · {pct(nextPassage.cov.ratio)} of its words known
+                      {nextPassage.p.level}, and you know {pct(nextPassage.cov.ratio)} of its words
                     </span>
                   </span>
                   <Icon name="chevron" size={18} />
@@ -220,18 +176,12 @@ export function Dashboard() {
               </li>
             ) : null}
           </ul>
-          {due === 0 && newAvailable === 0 ? (
-            <p className="muted small">
-              Cards are done for today. <Link to="/library">Read a passage</Link>?
-            </p>
-          ) : null}
+          {due === 0 && newAvailable === 0 ? <p className="muted small">Cards are done for today.</p> : null}
+          {queue.heldBack > 0 ? <p className="muted small">{queue.heldBack} more are spread over the next few days.</p> : null}
         </section>
 
         <section className="widget widget-goal" aria-labelledby="goal-title">
-          <div className="widget-head">
-            <h2 id="goal-title">This week</h2>
-            <p className="muted small">A weekly goal, so a day off never resets anything.</p>
-          </div>
+          <h2 id="goal-title">This week</h2>
           <GoalRing fraction={weekly.fraction} value={weekly.value} target={weekly.target} unit={goal?.unit ?? 'minutes'} />
           <dl className="goal-facts">
             <div>
@@ -250,10 +200,7 @@ export function Dashboard() {
         </section>
 
         <section className="widget widget-span-2" aria-labelledby="fc-title">
-          <div className="widget-head">
-            <h2 id="fc-title">Next 7 days</h2>
-            <p className="muted small">Reviews the scheduler expects, with today in colour.</p>
-          </div>
+          <h2 id="fc-title">Next 7 days</h2>
           {days.some((d) => d.shown > 0) ? (
             <ForecastChart days={days} cap={progress.settings.maxReviewsPerDay} />
           ) : (
@@ -262,12 +209,16 @@ export function Dashboard() {
         </section>
 
         <section className="widget" aria-labelledby="prog-title">
-          <div className="widget-head">
-            <h2 id="prog-title">Progress</h2>
-          </div>
+          <h2 id="prog-title">Progress</h2>
           <ul className="bar-list">
             <Bar label="Words known" value={known.length} of={`of ${lexicon.length}`} fraction={lexicon.length ? known.length / lexicon.length : 0} />
             <Bar label="Everyday text covered (estimate)" value={pct(textCoverage)} fraction={textCoverage} />
+            <Bar
+              label={`Recall on reviews, last 30 days (target ${pct(target)})`}
+              value={retention.rate == null ? <span className="muted">no reviews yet</span> : pct(retention.rate)}
+              fraction={retention.rate ?? 0}
+              target={target}
+            />
             <Bar label="Grammar lessons" value={lessonsDone} of={`of ${pack.grammar.length}`} fraction={lessonsDone / Math.max(1, pack.grammar.length)} />
             <Bar label="Passages read" value={passagesDone} of={`of ${pack.passages.length}`} fraction={passagesDone / Math.max(1, pack.passages.length)} />
           </ul>
@@ -277,7 +228,7 @@ export function Dashboard() {
         </section>
 
         <section className="widget widget-span-3" aria-labelledby="cando-title">
-          <div className="widget-head">
+          <div className="section-head">
             <h2 id="cando-title">I can…</h2>
             <p className="muted small">
               {cando.filter((c) => c.done).length} of {cando.length} done
@@ -295,15 +246,9 @@ export function Dashboard() {
                     {c.cando.text}
                     <span className="sr-only">{c.done ? ' (done)' : ` (${c.completed} of ${c.total} steps done)`}</span>
                   </span>
-                  {!c.done ? (
-                    <span className="cando-count" aria-hidden="true">
-                      {c.completed}/{c.total}
-                    </span>
-                  ) : (
-                    <span className="cando-count cando-count-done" aria-hidden="true">
-                      Done
-                    </span>
-                  )}
+                  <span className={`cando-count ${c.done ? 'cando-count-done' : ''}`} aria-hidden="true">
+                    {c.done ? 'Done' : `${c.completed}/${c.total}`}
+                  </span>
                 </li>
               );
             })}

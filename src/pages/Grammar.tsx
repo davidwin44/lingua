@@ -33,8 +33,8 @@ export function Grammar() {
             return (
               <li key={l.id}>
                 <Link to={`/grammar/${l.id}`} className="card-row">
-                  <span className={`num-tile ${result ? 'num-tile-done' : isNext ? 'num-tile-next' : ''}`} aria-hidden="true">
-                    {result ? <Icon name="check" size={16} /> : l.order}
+                  <span className="row-num" aria-hidden="true">
+                    {l.order}
                   </span>
                   <span className="card-row-main">
                     <span className="card-row-title">{l.title}</span>
@@ -44,11 +44,11 @@ export function Grammar() {
                     </span>
                   </span>
                   {result ? (
-                    <span className="badge badge-ok">
+                    <span className="row-state row-state-ok">
                       {result.score}/{result.total}
                     </span>
                   ) : isNext ? (
-                    <span className="badge badge-warm">Up next</span>
+                    <span className="row-state row-state-warm">Up next</span>
                   ) : null}
                   <Icon name="chevron" size={18} />
                 </Link>
@@ -69,9 +69,6 @@ export function Grammar() {
             return (
               <li key={s.id}>
                 <Link to={`/grammar/mixed/${s.id}`} className="card-row">
-                  <span className="icon-tile" aria-hidden="true">
-                    <Icon name="layers" size={18} />
-                  </span>
                   <span className="card-row-main">
                     <span className="card-row-title">{s.title}</span>
                     {!ready ? (
@@ -82,7 +79,7 @@ export function Grammar() {
                       <span className="card-row-sub">{s.itemIds.length} items</span>
                     )}
                   </span>
-                  {ready ? <span className="badge badge-ok">Ready</span> : null}
+                  {ready ? <span className="row-state row-state-ok">Ready</span> : null}
                   <Icon name="chevron" size={18} />
                 </Link>
               </li>

@@ -15,18 +15,12 @@ const PATHS = {
   plus: 'M12 5v14M5 12h14',
   play: 'M7 4v16l13-8z',
   stop: 'M6 6h12v12H6z',
-  sparkle: 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z',
   chevron: 'M9 6l6 6-6 6',
-  target: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-4a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z',
-  pen: 'M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4',
-  chart: 'M5 20V11M11 20V5M17 20v-6M3 20h18',
-  layers: 'M12 4 3 8.5l9 4.5 9-4.5zM3 13l9 4.5 9-4.5',
-  circle: 'M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z',
 } as const;
 
 export type IconName = keyof typeof PATHS;
 
-const FILLED: IconName[] = ['volume', 'mic', 'play', 'stop', 'sparkle'];
+const FILLED: IconName[] = ['volume', 'mic', 'play', 'stop'];
 
 export function Icon({ name, size = 20, title }: { name: IconName; size?: number; title?: string }) {
   const filled = FILLED.includes(name);

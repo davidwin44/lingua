@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../state/AppContext';
 import { passageCoverage } from '../lib/coverage';
 import { knownLemmas } from '../lib/progress';
-import { Icon } from '../components/Icon';
 
-const BADGE: Record<string, string> = { Comfortable: 'badge-ok', Stretch: 'badge-warn', Hard: 'badge-bad' };
+const DIFFICULTY: Record<string, string> = { Comfortable: 'row-state-ok', Stretch: 'row-state-warn', Hard: 'row-state-bad' };
 
 /**
  * Graded reading/listening library, sorted by this learner's known-word coverage
@@ -46,9 +45,6 @@ export function Library() {
               <li key={p.id}>
                 <Link to={`/library/${p.id}`} className="table-row">
                   <span className="table-title">
-                    <span className="icon-tile" aria-hidden="true">
-                      <Icon name="book" size={18} />
-                    </span>
                     <span className="card-row-main">
                       <span className="card-row-title" lang={pack.meta.ttsLang}>
                         {p.title}
@@ -68,11 +64,11 @@ export function Library() {
                     </span>
                   </span>
                   <span className="table-cell">
-                    <span className={`badge ${BADGE[cov.badge] ?? ''}`}>{cov.badge}</span>
+                    <span className={`row-state ${DIFFICULTY[cov.badge] ?? ''}`}>{cov.badge}</span>
                   </span>
                   <span className="table-cell">
                     {done ? (
-                      <span className="badge badge-ok">
+                      <span className="row-state row-state-ok">
                         Read, {done.score}/{done.total}
                       </span>
                     ) : (

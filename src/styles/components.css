@@ -1504,24 +1504,12 @@ input[type='range'] {
   border-bottom-color: var(--accent);
 }
 .how-list {
-  counter-reset: how;
+  border-top: 1px solid var(--rule);
 }
 .how-list li {
-  counter-increment: how;
-  display: flex;
-  gap: 0.9rem;
   padding: 0.7rem 0;
   border-bottom: 1px solid var(--rule);
   color: var(--ink-2);
-}
-.how-list li::before {
-  content: counter(how);
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--accent);
-  width: 1rem;
-  flex-shrink: 0;
-  line-height: 1.3;
 }
 
 /* ---------- Reading ---------- */
